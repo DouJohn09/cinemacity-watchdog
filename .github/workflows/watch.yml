@@ -47,6 +47,11 @@ jobs:
         env:
           FILM_PATTERN: odyss
           AUDITORIUM_PATTERN: imax
+          # Od které řady od plátna má smysl na 70mm sedět. V prvních řadách
+          # zbývají poslední místa skoro pořád — hlásit je by byl jen šum.
+          MIN_ROW: "5"
+          # Kolik sedadel vedle sebe se zvýrazní jako "sedíme spolu".
+          PREFERRED_BLOCK: "3"
         run: |
           python3 watch.py \
             --state state/seen.json \

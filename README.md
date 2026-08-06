@@ -1,8 +1,16 @@
 # cinemacity-watchdog
 
-Hlídá rozpis [Cinema City](https://www.cinemacity.cz) a když přibude nový termín
-**Odyssei v IMAXu**, založí v tomhle repu issue a **přiřadí ho vlastníkovi repa**.
-GitHub z něj pošle e-mail i push do mobilní appky.
+Hlídá rozpis [Cinema City](https://www.cinemacity.cz) a hlásí dvě věci:
+
+1. **nový termín Odyssei v IMAXu** — přibyl v rozpisu další hrací den,
+2. **uvolněné místo v dobré řadě** — někdo stornoval lístek od 5. řady dál.
+
+Když nastane jedno nebo druhé, založí v tomhle repu issue a **přiřadí ho
+vlastníkovi repa**. GitHub z něj pošle e-mail i push do mobilní appky.
+
+To druhé je celý smysl: projekce vypadají vyprodaně, ale úplně vyprodané nejsou
+— skoro pořád zbývá pár míst v prvních dvou řadách, což je na 70mm k ničemu.
+Zajímavý je jen okamžik, kdy se uvolní sedadlo dost daleko od plátna.
 
 Na přiřazení záleží: e-mail chodí ve výchozím nastavení jen u „Participating"
 notifikací (přiřazení, zmínky, odpovědi). Pouhé sledování repa („Watching")
@@ -18,11 +26,19 @@ Běží v GitHub Actions, takže funguje i když je Mac vypnutý.
   zahazuje běhy). Repo je veřejné, takže minuty Actions jsou zdarma bez limitu.
 - [`watch.py`](watch.py) stáhne rozpis z veřejného JSON API cinemacity.cz
   (`/cz/data-api-service/v1/quickbook/10101/…`) — bez klíče, bez přihlášení.
-- Seznam už viděných představení drží v [`state/seen.json`](state/seen.json),
-  který si workflow po každém běhu commitne zpátky. Hlásí se tedy jen přírůstky.
+- [`seats.py`](seats.py) pak ke každé budoucí projekci dotáhne **plán sálu
+  a stav sedadel** z rezervačního systému `tickets.cinemacity.cz` — taky bez
+  přihlášení. Rozpis sám o sobě umí říct jen `availabilityRatio`, tedy kolik
+  procent sálu je volných; kde ta místa jsou, se musí zjistit odsud.
+- Seznam už viděných představení a volných míst v dobrých řadách drží
+  v [`state/seen.json`](state/seen.json), který si workflow po každém běhu
+  commitne zpátky. Hlásí se tedy jen přírůstky.
 - Nová představení → issue s časem, sálem, příznaky (70mm / titulky / vyprodáno)
   a přímým odkazem na nákup vstupenky. Hlásí se i termíny, které z rozpisu
   **zmizely** (zrušené projekce).
+- Uvolněná místa → issue s řadou, čísly sedadel a zvýrazněním, kolik jich je
+  **vedle sebe**. Hlásí se přechod „obsazeno → volno", ne stav; když někdo
+  lístek koupí a pak zase stornuje, přijde e-mail znovu.
 - Issue se **hned po založení zavírá**. Slouží jen jako doručovací kanál pro
   e-mail, který GitHub pošle už při jeho vzniku — seznam otevřených issues tak
   zůstává prázdný a nic není potřeba uklízet ručně. Obsah zůstává čitelný mezi
@@ -31,13 +47,22 @@ Běží v GitHub Actions, takže funguje i když je Mac vypnutý.
   by projekce, která právě doběhla, vypadala jako budoucí a při zmizení
   z rozpisu by se falešně nahlásila jako zrušená.
 
-Jeden běh je ~45 HTTP dotazů a trvá ~20 sekund.
+Jeden běh je ~45 dotazů na rozpis plus jeden na sedadla za každou budoucí
+projekci (teď ~120 celkem) a trvá ~2 minuty.
 
 ## Co přesně se hlídá
 
 Představení, kde **název filmu** obsahuje `odyss` **a** **název sálu** obsahuje
 `imax`. Aktuálně tomu odpovídá jediné kino v ČR — **Praha Flora**, sál
 `IMAX VOLVO`, kde Odyssea běží v 70mm s titulky.
+
+Z volných sedadel se hlásí jen ta, která jsou **v řadě 5 a dál** (`MIN_ROW`)
+a jsou to **běžná sedadla** — místa pro vozíčkáře `V1`–`V6` v poslední řadě
+jsou skoro pořád volná a hlásit je by znamenalo e-mail po každém běhu.
+Sedadla vedle sebe se poznají podle sousedních X-souřadnic v plánu sálu;
+žádná řada v IMAX VOLVO nemá v X díru, takže rozestup 1 opravdu znamená
+„vedle sebe". Skupiny se v hlášení neslévají — volná sedadla 1–8 a 14–23
+se vypíšou zvlášť, ne jako „1–23".
 
 Aby se netahal celý rozpis všech třinácti kin, hledá se dvoufázově: nejdřív se
 zjistí, která kina vůbec mají IMAX sál (jedna sonda na nejbližší hrací den plus
@@ -53,9 +78,13 @@ Chování jde změnit proměnnými prostředí ve workflow:
 | `HORIZON_DAYS` | `180` | jak daleko dopředu se ptát |
 | `HINT_ATTR` | `70-mm` | atribut pro levné dohledání kandidátských kin |
 | `REQUEST_DELAY` | `0.25` | pauza mezi dotazy na API (s) |
+| `MIN_ROW` | `5` | od které řady od plátna se volná místa hlásí |
+| `PREFERRED_BLOCK` | `3` | kolik sedadel vedle sebe se zvýrazní |
 
 Hlídat cokoli jiného (třeba `FILM_PATTERN=dune`, `AUDITORIUM_PATTERN=4dx`) tedy
-znamená přepsat dvě proměnné a smazat `state/seen.json`.
+znamená přepsat dvě proměnné a smazat `state/seen.json`. Totéž platí pro
+`MIN_ROW`: ve stavu jsou uložená jen místa nad tehdejším prahem, takže po
+zpřísnění se stav nesrovná sám.
 
 ## Chci to hlídat taky (fork)
 
@@ -80,8 +109,13 @@ Hlídat jiný film než Odysseu: přepiš `FILM_PATTERN` (a případně
 ## Ruční spuštění
 
 **Actions → Cinema City watchdog → Run workflow**. Zaškrtnutí *force_report*
-nahlásí všechny aktuální termíny, i ty už známé — hodí se na ověření, že to žije,
-nebo jako „ukaž mi, co teď hrajou“.
+nahlásí všechny aktuální termíny i všechna volná místa, i ty už známé — hodí se
+na ověření, že to žije, nebo jako „ukaž mi, co teď hrajou a kam se dá sednout“.
+
+První běh po zapnutí hlídání sedadel si stav míst jen **tiše zapíše** a nic
+nehlásí — jinak by hned na úvod přišel e-mail s celým rozpisem místo se
+skutečnou novinkou. Chceš-li vidět aktuální stav, spusť ho ručně
+s *force_report*.
 
 ```bash
 gh workflow run watch.yml --repo TarkDetrius/cinemacity-watchdog -f force_report=true

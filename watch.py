@@ -18,6 +18,8 @@ import urllib.request
 from datetime import date, datetime, timedelta
 from zoneinfo import ZoneInfo
 
+import seats
+
 SITE_ID = "10101"  # cinemacity.cz
 BASE = f"https://www.cinemacity.cz/cz/data-api-service/v1/quickbook/{SITE_ID}"
 LANG = "cs_CZ"
@@ -144,9 +146,35 @@ def collect():
                     # GET a otevře rovnou výběr sedadel. Pozor, parametr lang
                     # tady dělá 404 — musí se vynechat.
                     "booking": f"https://tickets.cinemacity.cz/order/{e.get('presentationCode') or e['id']}",
+                    "pres": e.get("presentationCode") or e["id"],
                     "soldOut": bool(e.get("soldOut")),
                 }
     return found
+
+
+def add_seats(events):
+    """Ke každému budoucímu představení dohledá volná místa v dobrých řadách.
+
+    Plán sálu se stahuje jednou za sál (je to vlastnost sálu, ne projekce),
+    stav sedadel pak jedním dotazem na představení. Když tickets API selže,
+    logne se to a hlídání rozpisu běží dál — výpadek rezervačního systému
+    nesmí shodit celý běh.
+    """
+    layouts = {}
+    upcoming = [e for e in events.values() if e["datetime"] >= now().isoformat()]
+    for e in sorted(upcoming, key=lambda x: x["datetime"]):
+        hall = (e["cinemaId"], e["auditorium"])
+        try:
+            if hall not in layouts:
+                layouts[hall] = seats.fetch_layout(e["pres"])
+            time.sleep(DELAY)
+            rows = seats.good_seats(seats.fetch_free(e["pres"]), layouts[hall])
+        except (RuntimeError, KeyError, TypeError) as exc:
+            print(f"  ! místa pro {e['datetime']} se nepodařilo zjistit: {exc}")
+            continue
+        e["_rows"] = rows
+        e["seats"] = {"free": seats.seat_ids(rows), "block": seats.best_block(rows)}
+    return events
 
 
 def load_state(path):
@@ -157,21 +185,37 @@ def load_state(path):
         return {"updated": None, "events": {}}
 
 
-def save_state(path, events):
-    """Zapíše stav, ale jen když se změnila množina představení.
+def signature(events):
+    """Co všechno rozhoduje o hlášení: seznam ID + volná místa v dobrých řadách.
 
     Kdyby se soubor přepisoval při každém běhu, měnilo by se v něm razítko
     "updated" a workflow by si po sobě commitoval prázdnou změnu 48× denně.
-    Rozhoduje proto seznam ID — to je přesně to, na čem stojí hlášení.
-    Volatilní pole (soldOut) se tím pádem neaktualizují; drží se hodnota
-    z chvíle, kdy se představení objevilo poprvé, což je i to, co se hlásí.
+    Rozhoduje proto jen tohle. Ostatní volatilní pole (soldOut,
+    availabilityRatio) se tím pádem neaktualizují — drží se hodnota z chvíle,
+    kdy se představení objevilo poprvé, což je i to, co se hlásí.
+
+    Místa v prvních řadách se schválně nesledují: mění se pořád, nikdy se
+    nehlásí a jen by generovala commity.
     """
-    if set(events) == set(load_state(path).get("events", {})):
+    return {k: tuple(v.get("seats", {}).get("free", ())) for k, v in events.items()}
+
+
+def save_state(path, events):
+    """Zapíše stav, ale jen když se změnilo něco, na čem stojí hlášení."""
+    if signature(events) == signature(load_state(path).get("events", {})):
         return False
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     payload = {
         "updated": now().replace(microsecond=0).isoformat(),
-        "events": dict(sorted(events.items(), key=lambda kv: kv[1]["datetime"])),
+        "events": dict(
+            sorted(
+                (
+                    (k, {ik: iv for ik, iv in v.items() if not ik.startswith("_")})
+                    for k, v in events.items()
+                ),
+                key=lambda kv: kv[1]["datetime"],
+            )
+        ),
     }
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(payload, fh, ensure_ascii=False, indent=1, sort_keys=False)
@@ -195,9 +239,23 @@ def fmt_short(iso):
     return f"{dt.day}. {dt.month}."
 
 
-def render(new_events, gone_events):
+def render(new_events, gone_events, seat_news=()):
     """Markdown tělo hlášení."""
     lines = []
+    if seat_news:
+        lines.append(f"### 🎟️ Uvolnila se místa od řady {seats.MIN_ROW} dál ({len(seat_news)})\n")
+        for e in seat_news:
+            rows = e["_rows"]
+            block = seats.best_block(rows)
+            head = f"**{fmt_dt(e['datetime'])}** · {e['cinema']}"
+            if block >= seats.PREFERRED_BLOCK:
+                head += f" — **{block} vedle sebe**"
+            lines.append(f"- {head}")
+            lines.append(
+                f"  {plural_seats(seats.total_seats(rows))} · {seats.describe(rows)}"
+                f" — [koupit]({e['booking']})"
+            )
+        lines.append("")
     if new_events:
         lines.append(f"### Nově vypsáno ({len(new_events)})\n")
         for cinema, group in group_by_cinema(new_events):
@@ -255,6 +313,56 @@ def title_for(new_events):
     return f"🎬 {film} v IMAXu: {n} {word} ({span})"
 
 
+def plural_seats(n):
+    if n == 1:
+        return "1 volné místo"
+    return f"{n} volná místa" if n < 5 else f"{n} volných míst"
+
+
+def find_seat_news(current, known, force=False):
+    """Představení, u kterých PŘIBYLO volné místo v dobrých řadách.
+
+    Hlásí se přechod "obsazeno → volno", ne stav. Kdyby se držel seznam
+    "co už jsem hlásil", zaniklo by druhé uvolnění téhož sedadla (někdo
+    koupí a pak stornuje) — a přesně to je okamžik, na který se čeká.
+
+    Představení, které je ve stavu, ale ještě nemá o místech záznam, se
+    poprvé jen tiše zapíše. Je to první běh po přidání téhle funkce a
+    vysypat rovnou celý rozpis jako "novinku" by nikomu nepomohlo.
+    """
+    news = []
+    for eid, e in current.items():
+        if "_rows" not in e:
+            continue
+        free = set(e["seats"]["free"])
+        if not free:
+            continue
+        was = known.get(eid, {}).get("seats")
+        if force:
+            fresh = free
+        elif was is None:
+            if eid in known:
+                continue
+            fresh = free
+        else:
+            fresh = free - set(was.get("free", []))
+        if fresh:
+            news.append(e)
+    return sorted(news, key=lambda e: e["datetime"])
+
+
+def title_for_seats(seat_news):
+    """Titulek issue = předmět e-mailu, takže místa mají přednost před termíny."""
+    film = seat_news[0]["film"]
+    best = max(seats.best_block(e["_rows"]) for e in seat_news)
+    together = f", {best} vedle sebe" if best >= seats.PREFERRED_BLOCK else ""
+    if len(seat_news) == 1:
+        return f"🎟️ {film}: volná místa {fmt_dt(seat_news[0]['datetime'])}{together}"
+    days = sorted({e["datetime"][:10] for e in seat_news})
+    span = fmt_short(days[0]) + (f"–{fmt_short(days[-1])}" if len(days) > 1 else "")
+    return f"🎟️ {film}: volná místa u {len(seat_news)} projekcí ({span}){together}"
+
+
 def gh_output(**kwargs):
     path = os.environ.get("GITHUB_OUTPUT")
     if not path:
@@ -273,7 +381,7 @@ def main():
     ap.add_argument("--title", default="title.txt", help="kam zapsat titulek issue")
     args = ap.parse_args()
 
-    current = collect()
+    current = add_seats(collect())
     state = load_state(args.state)
     known = state.get("events", {})
 
@@ -284,6 +392,8 @@ def main():
         print(f"Stav zapsán do {args.state} (seed, nic se nehlásí).")
         gh_output(has_news="false")
         return
+
+    seat_news = find_seat_news(current, known, force=args.force_report)
 
     if args.force_report:
         new_events = sorted(current.values(), key=lambda e: e["datetime"])
@@ -301,13 +411,18 @@ def main():
 
     save_state(args.state, prune_past(current))
 
-    if not new_events and not gone:
+    if not new_events and not gone and not seat_news:
         print("Nic nového.")
         gh_output(has_news="false")
         return
 
-    body = render(new_events, gone)
-    title = title_for(new_events) if new_events else "🎬 Odyssea v IMAXu: zrušené termíny"
+    body = render(new_events, gone, seat_news)
+    if seat_news:
+        title = title_for_seats(seat_news)
+    elif new_events:
+        title = title_for(new_events)
+    else:
+        title = "🎬 Odyssea v IMAXu: zrušené termíny"
     with open(args.report, "w", encoding="utf-8") as fh:
         fh.write(body + "\n")
     with open(args.title, "w", encoding="utf-8") as fh:
