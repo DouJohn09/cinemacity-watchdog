@@ -1,0 +1,61 @@
+name: Přehled volných míst
+
+# Vygeneruje stránku s celkovým přehledem (dashboard.py) a commitne ji do repa.
+#
+# Proč přes Actions a ne v cloudové rutině, která stránku publikuje: sandbox
+# cloudové rutiny má zavřený egress a na cinemacity.cz vrací gateway 403
+# (Tunnel connection failed). Data se proto tahají tady, kde je síť otevřená,
+# a rutina si pak hotové HTML jen stáhne z raw.githubusercontent.com.
+#
+# Běží 15 minut před rutinou (ta jede 6:00/12:00/18:00 UTC), takže publikovaná
+# stránka je vždy maximálně čtvrt hodiny stará.
+on:
+  schedule:
+    - cron: "45 5,11,17 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: dashboard
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Vygenerovat přehled
+        env:
+          FILM_PATTERN: odyss
+          AUDITORIUM_PATTERN: imax
+          # Kritérium "hratelného" termínu: aspoň MIN_SEATS volných míst
+          # od řady MIN_ROW dál, u projekcí od FROM_HOUR. Nemusí být vedle sebe.
+          MIN_ROW: "5"
+          MIN_SEATS: "3"
+          FROM_HOUR: "16"
+        run: python3 dashboard.py
+
+      - name: Commitnout stránku
+        run: |
+          if git diff --quiet -- dashboard.html dashboard.json; then
+            echo "Přehled beze změny, není co commitovat."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dashboard.html dashboard.json
+          git commit -m "Přehled volných míst ($(date -u '+%Y-%m-%d %H:%M UTC'))"
+          for i in 1 2 3; do
+            git pull --rebase --quiet origin "${GITHUB_REF_NAME}" && git push && exit 0
+            sleep 5
+          done
+          echo "::error::Push přehledu se nepovedl."
+          exit 1
