@@ -1,6 +1,33 @@
 {
+<<<<<<< HEAD
  "updated": "2026-08-25T18:59:25",
  "events": {
+=======
+ "updated": "2026-08-25T16:56:28",
+ "events": {
+  "233306": {
+   "id": "233306",
+   "film": "Odyssea",
+   "filmLink": "https://www.cinemacity.cz/films/odyssea/7268s2r",
+   "cinema": "Praha Flora, OC FLORA",
+   "cinemaId": "1052",
+   "datetime": "2026-08-25T16:40:00",
+   "auditorium": "IMAX VOLVO",
+   "attrs": [
+    "15-plus",
+    "2d",
+    "70-mm",
+    "drama",
+    "first-subbed-lang-cs",
+    "history",
+    "original-lang-en",
+    "subbed"
+   ],
+   "booking": "https://tickets.cinemacity.cz/order/233306",
+   "pres": "233306",
+   "soldOut": false
+  },
+>>>>>>> 19455c7 (Aktualizace stavu rozpisu (2026-08-25 14:56 UTC))
   "233307": {
    "id": "233307",
    "film": "Odyssea",
@@ -23,8 +50,16 @@
    "pres": "233307",
    "soldOut": false,
    "seats": {
+<<<<<<< HEAD
     "free": [],
     "block": 0
+=======
+    "free": [
+     "6-27",
+     "7-31"
+    ],
+    "block": 1
+>>>>>>> 19455c7 (Aktualizace stavu rozpisu (2026-08-25 14:56 UTC))
    }
   },
   "233308": {
@@ -49,8 +84,15 @@
    "pres": "233308",
    "soldOut": false,
    "seats": {
+<<<<<<< HEAD
     "free": [],
     "block": 0
+=======
+    "free": [
+     "12-20"
+    ],
+    "block": 1
+>>>>>>> 19455c7 (Aktualizace stavu rozpisu (2026-08-25 14:56 UTC))
    }
   },
   "233309": {
@@ -75,10 +117,15 @@
    "pres": "233309",
    "soldOut": false,
    "seats": {
+<<<<<<< HEAD
     "free": [
      "6-3"
     ],
     "block": 1
+=======
+    "free": [],
+    "block": 0
+>>>>>>> 19455c7 (Aktualizace stavu rozpisu (2026-08-25 14:56 UTC))
    }
   },
   "233310": {
@@ -233,8 +280,16 @@
    "pres": "233315",
    "soldOut": false,
    "seats": {
+<<<<<<< HEAD
     "free": [],
     "block": 0
+=======
+    "free": [
+     "7-3",
+     "7-4"
+    ],
+    "block": 2
+>>>>>>> 19455c7 (Aktualizace stavu rozpisu (2026-08-25 14:56 UTC))
    }
   },
   "233316": {
@@ -803,7 +858,13 @@
      "10-2",
      "5-1",
      "5-2",
+<<<<<<< HEAD
      "5-3",
+=======
+     "5-29",
+     "5-3",
+     "5-30",
+>>>>>>> 19455c7 (Aktualizace stavu rozpisu (2026-08-25 14:56 UTC))
      "5-31",
      "5-32",
      "5-4",
@@ -1232,6 +1293,11 @@
      "5-30",
      "5-31",
      "5-32",
+<<<<<<< HEAD
+=======
+     "6-1",
+     "6-2",
+>>>>>>> 19455c7 (Aktualizace stavu rozpisu (2026-08-25 14:56 UTC))
      "7-1",
      "9-38"
     ],
@@ -1263,7 +1329,10 @@
     "free": [
      "5-1",
      "5-2",
+<<<<<<< HEAD
      "5-31",
+=======
+>>>>>>> 19455c7 (Aktualizace stavu rozpisu (2026-08-25 14:56 UTC))
      "5-32",
      "6-1"
     ],
@@ -1378,9 +1447,16 @@
    "seats": {
     "free": [
      "5-1",
+<<<<<<< HEAD
      "5-2"
     ],
     "block": 2
+=======
+     "5-2",
+     "5-3"
+    ],
+    "block": 3
+>>>>>>> 19455c7 (Aktualizace stavu rozpisu (2026-08-25 14:56 UTC))
    }
   },
   "233358": {
