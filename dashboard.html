@@ -4,82 +4,77 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 :root {
-  --bg: #eceee9;
-  --panel: #ffffff;
-  --panel-2: #f5f6f3;
-  --line: #d5d8d1;
-  --ink: #16181a;
-  --muted: #676d70;
-  --accent: #b06412;
-  --accent-soft: #f3e3d1;
-  --yes: #24704f;
-  --yes-soft: #d9ebe1;
-  --dim: #a9aeb0;
-  --shadow: 0 1px 2px rgba(20, 24, 26, .06), 0 8px 24px -18px rgba(20, 24, 26, .45);
+--bg: #eceee9;
+--panel: #ffffff;
+--panel-2: #f5f6f3;
+--line: #d5d8d1;
+--ink: #16181a;
+--muted: #676d70;
+--accent: #b06412;
+--accent-soft: #f3e3d1;
+--yes: #24704f;
+--yes-soft: #d9ebe1;
+--dim: #a9aeb0;
+--shadow: 0 1px 2px rgba(20, 24, 26, .06), 0 8px 24px -18px rgba(20, 24, 26, .45);
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #14161a;
-    --panel: #1c1f24;
-    --panel-2: #23272d;
-    --line: #31363d;
-    --ink: #e8eae6;
-    --muted: #949ba1;
-    --accent: #e9a54a;
-    --accent-soft: #3b2c17;
-    --yes: #62c79b;
-    --yes-soft: #1d3a2b;
-    --dim: #5b6268;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 10px 30px -20px rgba(0, 0, 0, .8);
-  }
+:root:not([data-theme="light"]) {
+--bg: #14161a;
+--panel: #1c1f24;
+--panel-2: #23272d;
+--line: #31363d;
+--ink: #e8eae6;
+--muted: #949ba1;
+--accent: #e9a54a;
+--accent-soft: #3b2c17;
+--yes: #62c79b;
+--yes-soft: #1d3a2b;
+--dim: #5b6268;
+--shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 10px 30px -20px rgba(0, 0, 0, .8);
+}
 }
 :root[data-theme="dark"] {
-  --bg: #14161a;
-  --panel: #1c1f24;
-  --panel-2: #23272d;
-  --line: #31363d;
-  --ink: #e8eae6;
-  --muted: #949ba1;
-  --accent: #e9a54a;
-  --accent-soft: #3b2c17;
-  --yes: #62c79b;
-  --yes-soft: #1d3a2b;
-  --dim: #5b6268;
-  --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 10px 30px -20px rgba(0, 0, 0, .8);
+--bg: #14161a;
+--panel: #1c1f24;
+--panel-2: #23272d;
+--line: #31363d;
+--ink: #e8eae6;
+--muted: #949ba1;
+--accent: #e9a54a;
+--accent-soft: #3b2c17;
+--yes: #62c79b;
+--yes-soft: #1d3a2b;
+--dim: #5b6268;
+--shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 10px 30px -20px rgba(0, 0, 0, .8);
 }
 * { box-sizing: border-box; }
 body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
-  font: 400 16px/1.55 "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
+margin: 0;
+background: var(--bg);
+color: var(--ink);
+font: 400 16px/1.55 "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+-webkit-font-smoothing: antialiased;
 }
 .wrap { max-width: 61rem; margin: 0 auto; padding: clamp(1.25rem, 4vw, 3rem) clamp(1rem, 4vw, 2rem) 4rem; display: flex; flex-direction: column; gap: 1.75rem; }
 a { color: inherit; }
 h1, h2, h3, .time, .dnum, .kpi-n { font-family: Oswald, "Arial Narrow", sans-serif; font-weight: 500; text-wrap: balance; }
-
 .eyebrow { font: 500 .72rem/1.2 "IBM Plex Mono", ui-monospace, monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
 h1 { margin: .45rem 0 0; font-size: clamp(2rem, 6vw, 2.9rem); letter-spacing: .01em; line-height: 1.05; }
 h1 .film { color: var(--accent); }
 .lede { margin: .5rem 0 0; max-width: 34rem; color: var(--muted); }
-
 .verdict-box { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--dim); border-radius: 3px; padding: 1.1rem 1.25rem; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: .3rem; }
 .verdict-box.yes { border-left-color: var(--yes); }
 .verdict-box.no { border-left-color: var(--accent); }
 .verdict-box h2 { margin: 0; font-size: 1.5rem; }
 .verdict-box p { margin: 0; color: var(--muted); }
-
 .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: .75rem; }
 .kpi { background: var(--panel); border: 1px solid var(--line); border-radius: 3px; padding: .8rem .9rem; }
 .kpi-n { display: block; font-size: 1.9rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .kpi-l { font: 400 .74rem/1.3 "IBM Plex Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
-
 .near { background: var(--accent-soft); border: 1px solid var(--line); border-radius: 3px; padding: 1rem 1.25rem; }
 .near h2 { margin: 0 0 .4rem; font-size: 1.05rem; }
 .near ul { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: .25rem; }
 .near a { font-family: "IBM Plex Mono", monospace; font-size: .85rem; }
-
 .board { display: flex; flex-direction: column; gap: .5rem; }
 .board > h2 { margin: .75rem 0 .25rem; font-size: 1.15rem; }
 .day { display: grid; grid-template-columns: 4.25rem 1fr; gap: .75rem; background: var(--panel); border: 1px solid var(--line); border-radius: 3px; overflow: hidden; }
@@ -89,9 +84,8 @@ h1 .film { color: var(--accent); }
 .dow { font: 500 .7rem/1 "IBM Plex Mono", monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 .dnum { font-size: 1.5rem; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .mon { font: 400 .72rem/1 "IBM Plex Mono", monospace; color: var(--muted); }
-.day-body { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; padding: .6rem .9rem .7rem 0; }
-
-.shw { min-width: 15rem; flex: 1 1 15rem; padding: .35rem 0; }
+.day-body { display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem 1.5rem; padding: .6rem .9rem .7rem 0; }
+.shw { min-width: 14rem; flex: 1 1 14rem; padding: .35rem 0; }
 .shw-head { display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }
 .time { font-size: 1.15rem; text-decoration: none; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
 .time:hover { border-bottom-color: var(--accent); color: var(--accent); }
@@ -103,706 +97,176 @@ h1 .film { color: var(--accent); }
 .detail { margin: .3rem 0 0; font: 400 .8rem/1.4 "IBM Plex Mono", monospace; color: var(--ink); }
 .meta { margin: .2rem 0 0; font-size: .78rem; color: var(--muted); font-variant-numeric: tabular-nums; }
 .meta a { color: var(--accent); }
-
 .strip { display: flex; gap: 2px; margin-top: .4rem; }
-.cell { position: relative; flex: 1 1 auto; height: 1.15rem; border-radius: 1px; background: var(--panel-2); border: 1px solid var(--line); display: grid; place-items: center; }
-.cell .num { font: 400 .58rem/1 "IBM Plex Mono", monospace; color: var(--dim); }
-.cell.bad { background: var(--dim); border-color: var(--dim); }
-.cell.bad .num { color: var(--panel); }
-.cell.good { background: var(--yes); border-color: var(--yes); }
-.cell.good .num { color: var(--panel); }
-
+.shw.none { margin: 0; display: flex; align-items: baseline; gap: .5rem; flex: 0 1 auto; min-width: 0; }
+.shw.none .verdict { font-size: .82rem; }
+.c { flex: 1 1 auto; height: 1.15rem; font: 400 .58rem/1.15rem "IBM Plex Mono", monospace; text-align: center; font-style: normal; color: var(--dim); border-radius: 1px; background: var(--panel-2); border: 1px solid var(--line); }
+.c.bad { background: var(--dim); border-color: var(--dim); color: var(--panel); }
+.c.good { background: var(--yes); border-color: var(--yes); color: var(--panel); }
 .legend { display: flex; flex-wrap: wrap; gap: .35rem 1.25rem; font-size: .8rem; color: var(--muted); }
 .legend span { display: inline-flex; align-items: center; gap: .4rem; }
 .swatch { width: .8rem; height: .8rem; border-radius: 1px; border: 1px solid var(--line); display: inline-block; }
 .swatch.good { background: var(--yes); border-color: var(--yes); }
 .swatch.bad { background: var(--dim); border-color: var(--dim); }
 .swatch.empty { background: var(--panel-2); }
-
 footer { border-top: 1px solid var(--line); padding-top: 1rem; font-size: .82rem; color: var(--muted); display: flex; flex-direction: column; gap: .3rem; }
 footer a { color: var(--accent); }
 @media (max-width: 30rem) {
-  .day { grid-template-columns: 3.4rem 1fr; }
-  .day-body { padding-right: .75rem; }
+.day { grid-template-columns: 3.4rem 1fr; }
+.day-body { padding-right: .75rem; }
 }
 </style>
-
 <div class="wrap">
-  <header>
-    <p class="eyebrow"><span>Praha Flora, OC FLORA</span><span>sál IMAX VOLVO</span><span>70&nbsp;mm</span></p>
-    <h1><span class="film">Odyssea</span><br>volná místa od řady 5</h1>
-    <p class="lede">Hlídané kritérium: aspoň 3 volná místa v řadě 5 a dál, projekce od 16:00. Místa pro vozíčkáře a řady u plátna se nepočítají.</p>
-  </header>
-
-  <div class="verdict-box no">
-    <h2>Zatím nic</h2>
-    <p>Žádná z 24 večerních projekcí nemá 3 volná místa od řady 5. Nejlepší nabídka: 1 volné místo.</p>
-  </div>
-
-  <div class="kpis">
-    <div class="kpi"><span class="kpi-n">0</span><span class="kpi-l">termínů projde</span></div>
-    <div class="kpi"><span class="kpi-n">24</span><span class="kpi-l">projekcí od 16:00</span></div>
-    <div class="kpi"><span class="kpi-n">52</span><span class="kpi-l">vypsáno celkem</span></div>
-    <div class="kpi"><span class="kpi-n">1</span><span class="kpi-l">nejvíc míst v jedné projekci</span></div>
-  </div>
-
-      <section class="near">
-        <h2>Blízko, ale málo míst</h2>
-        <ul><li><a href="https://tickets.cinemacity.cz/order/233307" target="_blank" rel="noopener">út 25. srpna 20:30</a> — řada 8: 27</li></ul>
-      </section>
-  <div class="board">
-    <h2>Všechny vypsané projekce</h2>
-    <p class="legend">
-      <span><i class="swatch good"></i> volno v řadě 5+</span>
-      <span><i class="swatch bad"></i> volno blízko plátna</span>
-      <span><i class="swatch empty"></i> obsazeno</span>
-      <span>pásek = řady 1 → 12 od plátna</span>
-    </p>
-
-      <section class="day some">
-        <div class="day-rail">
-          <span class="dow">út</span>
-          <span class="dnum">25.</span>
-          <span class="mon">8.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233307" target="_blank" rel="noopener">20:30</a>
-          
-          <span class="verdict">1 volné místo</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell empty" title="řada 1: 0 volná místa (blízko plátna)"><span class="num">1</span></span><span class="cell empty" title="řada 2: 0 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell good" title="řada 8: 1 volné místo"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        <p class="detail">řada 8: 27</p>
-        <p class="meta">v sále volno 1 z 380 · <a href="https://tickets.cinemacity.cz/order/233307" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day some">
-        <div class="day-rail">
-          <span class="dow">st</span>
-          <span class="dnum">26.</span>
-          <span class="mon">8.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233308" target="_blank" rel="noopener">09:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">1 volné místo</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 21 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 10 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 1 volné místo (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell good" title="řada 12: 1 volné místo"><span class="num">12</span></span></div>
-        <p class="detail">řada 12: 20</p>
-        <p class="meta">v sále volno 33 z 379 · <a href="https://tickets.cinemacity.cz/order/233308" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233309" target="_blank" rel="noopener">12:50</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 7 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 1 volné místo (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 8 z 379 · <a href="https://tickets.cinemacity.cz/order/233309" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233310" target="_blank" rel="noopener">16:40</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 2 volná místa (blízko plátna)"><span class="num">1</span></span><span class="cell empty" title="řada 2: 0 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 2 z 379 · <a href="https://tickets.cinemacity.cz/order/233310" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233311" target="_blank" rel="noopener">20:30</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell empty" title="řada 1: 0 volná místa (blízko plátna)"><span class="num">1</span></span><span class="cell empty" title="řada 2: 0 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 0 z 379 · <a href="https://tickets.cinemacity.cz/order/233311" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day none">
-        <div class="day-rail">
-          <span class="dow">čt</span>
-          <span class="dnum">27.</span>
-          <span class="mon">8.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233312" target="_blank" rel="noopener">11:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 16 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 2 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 1 volné místo (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 19 z 379 · <a href="https://tickets.cinemacity.cz/order/233312" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233313" target="_blank" rel="noopener">15:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 8 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 1 volné místo (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 9 z 380 · <a href="https://tickets.cinemacity.cz/order/233313" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day none">
-        <div class="day-rail">
-          <span class="dow">pá</span>
-          <span class="dnum">28.</span>
-          <span class="mon">8.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233314" target="_blank" rel="noopener">09:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 20 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 4 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 1 volné místo (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 25 z 379 · <a href="https://tickets.cinemacity.cz/order/233314" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233315" target="_blank" rel="noopener">12:50</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 6 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 2 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 8 z 379 · <a href="https://tickets.cinemacity.cz/order/233315" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233316" target="_blank" rel="noopener">16:40</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell empty" title="řada 1: 0 volná místa (blízko plátna)"><span class="num">1</span></span><span class="cell empty" title="řada 2: 0 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 0 z 381 · <a href="https://tickets.cinemacity.cz/order/233316" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233317" target="_blank" rel="noopener">20:30</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 1 volné místo (blízko plátna)"><span class="num">1</span></span><span class="cell empty" title="řada 2: 0 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 1 z 379 · <a href="https://tickets.cinemacity.cz/order/233317" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day none">
-        <div class="day-rail">
-          <span class="dow">so</span>
-          <span class="dnum">29.</span>
-          <span class="mon">8.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233319" target="_blank" rel="noopener">09:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 16 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 1 volné místo (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 17 z 379 · <a href="https://tickets.cinemacity.cz/order/233319" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233318" target="_blank" rel="noopener">12:50</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell empty" title="řada 1: 0 volná místa (blízko plátna)"><span class="num">1</span></span><span class="cell empty" title="řada 2: 0 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 0 z 379 · <a href="https://tickets.cinemacity.cz/order/233318" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233320" target="_blank" rel="noopener">16:40</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell empty" title="řada 1: 0 volná místa (blízko plátna)"><span class="num">1</span></span><span class="cell empty" title="řada 2: 0 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 0 z 379 · <a href="https://tickets.cinemacity.cz/order/233320" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233321" target="_blank" rel="noopener">20:30</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 4 volná místa (blízko plátna)"><span class="num">1</span></span><span class="cell empty" title="řada 2: 0 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 4 z 379 · <a href="https://tickets.cinemacity.cz/order/233321" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day none">
-        <div class="day-rail">
-          <span class="dow">ne</span>
-          <span class="dnum">30.</span>
-          <span class="mon">8.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233322" target="_blank" rel="noopener">09:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 18 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 2 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 1 volné místo (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 21 z 379 · <a href="https://tickets.cinemacity.cz/order/233322" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233323" target="_blank" rel="noopener">12:50</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 2 volná místa (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 1 volné místo (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 3 z 379 · <a href="https://tickets.cinemacity.cz/order/233323" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233324" target="_blank" rel="noopener">16:40</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell empty" title="řada 1: 0 volná místa (blízko plátna)"><span class="num">1</span></span><span class="cell empty" title="řada 2: 0 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 0 z 379 · <a href="https://tickets.cinemacity.cz/order/233324" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233325" target="_blank" rel="noopener">20:30</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 4 volná místa (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 2 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 6 z 379 · <a href="https://tickets.cinemacity.cz/order/233325" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day none">
-        <div class="day-rail">
-          <span class="dow">po</span>
-          <span class="dnum">31.</span>
-          <span class="mon">8.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233326" target="_blank" rel="noopener">09:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 17 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 4 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 44 z 379 · <a href="https://tickets.cinemacity.cz/order/233326" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233327" target="_blank" rel="noopener">12:50</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 9 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 1 volné místo (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 33 z 379 · <a href="https://tickets.cinemacity.cz/order/233327" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233328" target="_blank" rel="noopener">16:40</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 17 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 2 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 19 z 379 · <a href="https://tickets.cinemacity.cz/order/233328" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233329" target="_blank" rel="noopener">20:30</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 13 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 4 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 17 z 379 · <a href="https://tickets.cinemacity.cz/order/233329" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day some">
-        <div class="day-rail">
-          <span class="dow">út</span>
-          <span class="dnum">1.</span>
-          <span class="mon">9.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233330" target="_blank" rel="noopener">09:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">11 volných míst · 2 vedle sebe</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 23 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 17 volných míst (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 9 volných míst (blízko plátna)"><span class="num">4</span></span><span class="cell good" title="řada 5: 4 volná místa"><span class="num">5</span></span><span class="cell good" title="řada 6: 2 volná místa"><span class="num">6</span></span><span class="cell good" title="řada 7: 2 volná místa"><span class="num">7</span></span><span class="cell good" title="řada 8: 1 volné místo"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell good" title="řada 10: 1 volné místo"><span class="num">10</span></span><span class="cell good" title="řada 11: 1 volné místo"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        <p class="detail">řada 5: 31–32, 1–2 · řada 6: 32, 1 · řada 7: 35, 1 · řada 8: 38 · řada 10: 1 · řada 11: 1</p>
-        <p class="meta">v sále volno 83 z 379 · <a href="https://tickets.cinemacity.cz/order/233330" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233331" target="_blank" rel="noopener">12:50</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 21 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 13 volných míst (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 4 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 61 z 379 · <a href="https://tickets.cinemacity.cz/order/233331" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233332" target="_blank" rel="noopener">16:40</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 21 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 2 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 23 z 379 · <a href="https://tickets.cinemacity.cz/order/233332" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233333" target="_blank" rel="noopener">20:30</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 14 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 10 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 3 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 27 z 379 · <a href="https://tickets.cinemacity.cz/order/233333" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day some">
-        <div class="day-rail">
-          <span class="dow">st</span>
-          <span class="dnum">2.</span>
-          <span class="mon">9.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233334" target="_blank" rel="noopener">11:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">6 volných míst · 2 vedle sebe</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 16 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 12 volných míst (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 8 volných míst (blízko plátna)"><span class="num">4</span></span><span class="cell good" title="řada 5: 3 volná místa"><span class="num">5</span></span><span class="cell good" title="řada 6: 1 volné místo"><span class="num">6</span></span><span class="cell good" title="řada 7: 1 volné místo"><span class="num">7</span></span><span class="cell good" title="řada 8: 1 volné místo"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        <p class="detail">řada 5: 1–2, 32 · řada 6: 1 · řada 7: 35 · řada 8: 38</p>
-        <p class="meta">v sále volno 65 z 379 · <a href="https://tickets.cinemacity.cz/order/233334" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233335" target="_blank" rel="noopener">15:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 18 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 4 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 1 volné místo (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 46 z 379 · <a href="https://tickets.cinemacity.cz/order/233335" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day some">
-        <div class="day-rail">
-          <span class="dow">čt</span>
-          <span class="dnum">3.</span>
-          <span class="mon">9.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233336" target="_blank" rel="noopener">09:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">17 volných míst · 4 vedle sebe</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 23 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 14 volných míst (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 12 volných míst (blízko plátna)"><span class="num">4</span></span><span class="cell good" title="řada 5: 8 volných míst"><span class="num">5</span></span><span class="cell good" title="řada 6: 3 volná místa"><span class="num">6</span></span><span class="cell good" title="řada 7: 4 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell good" title="řada 10: 2 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        <p class="detail">řada 5: 29–32 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 6: 31–32, 3 · řada 7: 33–35 (3 vedle sebe), 3 · řada 10: 1–2</p>
-        <p class="meta">v sále volno 89 z 379 · <a href="https://tickets.cinemacity.cz/order/233336" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233337" target="_blank" rel="noopener">12:50</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">6 volných míst · 2 vedle sebe</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 20 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 22 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 16 volných míst (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 9 volných míst (blízko plátna)"><span class="num">4</span></span><span class="cell good" title="řada 5: 3 volná místa"><span class="num">5</span></span><span class="cell good" title="řada 6: 2 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell good" title="řada 8: 1 volné místo"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        <p class="detail">řada 5: 1–2, 32 · řada 6: 1–2 · řada 8: 1</p>
-        <p class="meta">v sále volno 73 z 379 · <a href="https://tickets.cinemacity.cz/order/233337" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233338" target="_blank" rel="noopener">16:40</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 15 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 7 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 1 volné místo (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 23 z 379 · <a href="https://tickets.cinemacity.cz/order/233338" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day some">
-        <div class="day-rail">
-          <span class="dow">pá</span>
-          <span class="dnum">4.</span>
-          <span class="mon">9.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233340" target="_blank" rel="noopener">09:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">10 volných míst · 3 vedle sebe</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 23 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 17 volných míst (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 9 volných míst (blízko plátna)"><span class="num">4</span></span><span class="cell good" title="řada 5: 5 volných míst"><span class="num">5</span></span><span class="cell good" title="řada 6: 3 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell good" title="řada 8: 1 volné místo"><span class="num">8</span></span><span class="cell good" title="řada 9: 1 volné místo"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        <p class="detail">řada 5: 30–32 (3 vedle sebe), 1–2 · řada 6: 1–2, 32 · řada 8: 3 · řada 9: 38</p>
-        <p class="meta">v sále volno 82 z 379 · <a href="https://tickets.cinemacity.cz/order/233340" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233341" target="_blank" rel="noopener">12:50</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 16 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 10 volných míst (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 6 volných míst (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 55 z 379 · <a href="https://tickets.cinemacity.cz/order/233341" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233342" target="_blank" rel="noopener">16:40</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 21 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 5 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 1 volné místo (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 1 volné místo (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 28 z 379 · <a href="https://tickets.cinemacity.cz/order/233342" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233343" target="_blank" rel="noopener">20:30</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 11 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell empty" title="řada 2: 0 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 11 z 379 · <a href="https://tickets.cinemacity.cz/order/233343" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day none">
-        <div class="day-rail">
-          <span class="dow">so</span>
-          <span class="dnum">5.</span>
-          <span class="mon">9.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233344" target="_blank" rel="noopener">09:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 22 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 8 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 3 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 1 volné místo (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 34 z 379 · <a href="https://tickets.cinemacity.cz/order/233344" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233345" target="_blank" rel="noopener">12:50</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 20 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 8 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 2 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 30 z 379 · <a href="https://tickets.cinemacity.cz/order/233345" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233346" target="_blank" rel="noopener">16:40</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 9 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 3 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 12 z 379 · <a href="https://tickets.cinemacity.cz/order/233346" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233347" target="_blank" rel="noopener">20:30</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 21 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 4 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 1 volné místo (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 1 volné místo (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 27 z 379 · <a href="https://tickets.cinemacity.cz/order/233347" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day none">
-        <div class="day-rail">
-          <span class="dow">ne</span>
-          <span class="dnum">6.</span>
-          <span class="mon">9.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233348" target="_blank" rel="noopener">09:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 14 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 4 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 41 z 379 · <a href="https://tickets.cinemacity.cz/order/233348" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233349" target="_blank" rel="noopener">12:50</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 20 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 6 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 2 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 28 z 379 · <a href="https://tickets.cinemacity.cz/order/233349" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233350" target="_blank" rel="noopener">16:40</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 17 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell empty" title="řada 2: 0 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 17 z 379 · <a href="https://tickets.cinemacity.cz/order/233350" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233351" target="_blank" rel="noopener">20:30</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 22 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 7 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 29 z 379 · <a href="https://tickets.cinemacity.cz/order/233351" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day some">
-        <div class="day-rail">
-          <span class="dow">po</span>
-          <span class="dnum">7.</span>
-          <span class="mon">9.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233352" target="_blank" rel="noopener">09:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">10 volných míst · 3 vedle sebe</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 23 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 16 volných míst (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 9 volných míst (blízko plátna)"><span class="num">4</span></span><span class="cell good" title="řada 5: 6 volných míst"><span class="num">5</span></span><span class="cell good" title="řada 6: 2 volná místa"><span class="num">6</span></span><span class="cell good" title="řada 7: 1 volné místo"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell good" title="řada 11: 1 volné místo"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        <p class="detail">řada 5: 30–32 (3 vedle sebe), 1–3 (3 vedle sebe) · řada 6: 1–2 · řada 7: 1 · řada 11: 1</p>
-        <p class="meta">v sále volno 81 z 379 · <a href="https://tickets.cinemacity.cz/order/233352" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233353" target="_blank" rel="noopener">12:50</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">5 volných míst · 2 vedle sebe</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 21 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 14 volných míst (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 7 volných míst (blízko plátna)"><span class="num">4</span></span><span class="cell good" title="řada 5: 4 volná místa"><span class="num">5</span></span><span class="cell good" title="řada 6: 1 volné místo"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        <p class="detail">řada 5: 31–32, 1–2 · řada 6: 1</p>
-        <p class="meta">v sále volno 70 z 379 · <a href="https://tickets.cinemacity.cz/order/233353" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233354" target="_blank" rel="noopener">16:40</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 11 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 2 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 2 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 38 z 379 · <a href="https://tickets.cinemacity.cz/order/233354" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233355" target="_blank" rel="noopener">20:30</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 18 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 6 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 1 volné místo (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 1 volné místo (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 26 z 379 · <a href="https://tickets.cinemacity.cz/order/233355" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-      <section class="day some">
-        <div class="day-rail">
-          <span class="dow">út</span>
-          <span class="dnum">8.</span>
-          <span class="mon">9.</span>
-        </div>
-        <div class="day-body">
-      <article class="shw early">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233356" target="_blank" rel="noopener">09:00</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">5 volných míst · 2 vedle sebe</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 23 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 17 volných míst (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 11 volných míst (blízko plátna)"><span class="num">4</span></span><span class="cell good" title="řada 5: 3 volná místa"><span class="num">5</span></span><span class="cell good" title="řada 6: 1 volné místo"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell good" title="řada 9: 1 volné místo"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        <p class="detail">řada 5: 31–32, 1 · řada 6: 1 · řada 9: 1</p>
-        <p class="meta">v sále volno 79 z 379 · <a href="https://tickets.cinemacity.cz/order/233356" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw early">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233357" target="_blank" rel="noopener">12:50</a>
-          <span class="tag">před 16:00</span>
-          <span class="verdict">3 volná místa · 3 vedle sebe</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 23 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 9 volných míst (blízko plátna)"><span class="num">3</span></span><span class="cell bad" title="řada 4: 3 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell good" title="řada 5: 3 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        <p class="detail">řada 5: 1–3 (3 vedle sebe)</p>
-        <p class="meta">v sále volno 61 z 379 · <a href="https://tickets.cinemacity.cz/order/233357" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233358" target="_blank" rel="noopener">16:40</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 23 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 10 volných míst (blízko plátna)"><span class="num">2</span></span><span class="cell bad" title="řada 3: 4 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 37 z 380 · <a href="https://tickets.cinemacity.cz/order/233358" target="_blank" rel="noopener">koupit</a></p>
-      </article>
-      <article class="shw none">
-        <div class="shw-head">
-          <a class="time" href="https://tickets.cinemacity.cz/order/233359" target="_blank" rel="noopener">20:30</a>
-          
-          <span class="verdict">nic od řady 5</span>
-        </div>
-        <div class="strip" aria-hidden="false"><span class="cell bad" title="řada 1: 15 volných míst (blízko plátna)"><span class="num">1</span></span><span class="cell bad" title="řada 2: 3 volná místa (blízko plátna)"><span class="num">2</span></span><span class="cell empty" title="řada 3: 0 volná místa (blízko plátna)"><span class="num">3</span></span><span class="cell empty" title="řada 4: 0 volná místa (blízko plátna)"><span class="num">4</span></span><span class="cell empty" title="řada 5: 0 volná místa"><span class="num">5</span></span><span class="cell empty" title="řada 6: 0 volná místa"><span class="num">6</span></span><span class="cell empty" title="řada 7: 0 volná místa"><span class="num">7</span></span><span class="cell empty" title="řada 8: 0 volná místa"><span class="num">8</span></span><span class="cell empty" title="řada 9: 0 volná místa"><span class="num">9</span></span><span class="cell empty" title="řada 10: 0 volná místa"><span class="num">10</span></span><span class="cell empty" title="řada 11: 0 volná místa"><span class="num">11</span></span><span class="cell empty" title="řada 12: 0 volná místa"><span class="num">12</span></span></div>
-        
-        <p class="meta">v sále volno 18 z 379 · <a href="https://tickets.cinemacity.cz/order/233359" target="_blank" rel="noopener">koupit</a></p>
-      </article></div>
-      </section>
-  </div>
-
-  <footer>
-    <p>Aktualizováno 25. 8. 2026 v 17:06 · rozpis kina končí 8. září, další dny se teprve objeví.</p>
-    <p><a href="https://www.cinemacity.cz/films/odyssea/7268s2r" target="_blank" rel="noopener">Stránka filmu</a> · <a href="https://github.com/DouJohn09/cinemacity-watchdog" target="_blank" rel="noopener">hlídač na GitHubu</a> posílá e-mail, když se místo uvolní.</p>
-  </footer>
+<header>
+<p class="eyebrow"><span>Praha Flora, OC FLORA</span><span>sál IMAX VOLVO</span><span>70&nbsp;mm</span></p>
+<h1><span class="film">Odyssea</span><br>volná místa od řady 5</h1>
+<p class="lede">Hlídané kritérium: aspoň 3 volná místa v řadě 5 a dál, projekce od 16:00. Místa pro vozíčkáře a řady u plátna se nepočítají.</p>
+</header>
+<div class="verdict-box no">
+<h2>Zatím nic</h2>
+<p>Žádná z 24 večerních projekcí nemá 3 volná místa od řady 5. Nejlepší nabídka: 1 volné místo.</p>
+</div>
+<div class="kpis">
+<div class="kpi"><span class="kpi-n">0</span><span class="kpi-l">termínů projde</span></div>
+<div class="kpi"><span class="kpi-n">24</span><span class="kpi-l">projekcí od 16:00</span></div>
+<div class="kpi"><span class="kpi-n">52</span><span class="kpi-l">vypsáno celkem</span></div>
+<div class="kpi"><span class="kpi-n">1</span><span class="kpi-l">nejvíc míst v jedné projekci</span></div>
+</div>
+<section class="near">
+<h2>Blízko, ale málo míst</h2>
+<ul><li><a href="https://tickets.cinemacity.cz/order/233307" target="_blank" rel="noopener">út 25. srpna 20:30</a> — řada 7: 29</li></ul>
+</section>
+<div class="board">
+<h2>Všechny vypsané projekce</h2>
+<p class="legend">
+<span><i class="swatch good"></i> volno v řadě 5+</span>
+<span><i class="swatch bad"></i> volno blízko plátna</span>
+<span><i class="swatch empty"></i> obsazeno</span>
+<span>pásek u termínů s volnem = řady 1 → 12 od plátna</span>
+</p>
+<section class="day some">
+<div class="day-rail">
+<span class="dow">út</span>
+<span class="dnum">25.</span>
+<span class="mon">8.</span>
+</div>
+<div class="day-body"><article class="shw"><p class="shw-head"><a class="time" href="https://tickets.cinemacity.cz/order/233307" target="_blank" rel="noopener">20:30</a><span class="verdict">1 volné místo</span></p><div class="strip"><i class="c empty" title="ř1: 0">1</i><i class="c empty" title="ř2: 0">2</i><i class="c empty" title="ř3: 0">3</i><i class="c empty" title="ř4: 0">4</i><i class="c empty" title="ř5: 0">5</i><i class="c empty" title="ř6: 0">6</i><i class="c good" title="ř7: 1">7</i><i class="c empty" title="ř8: 0">8</i><i class="c empty" title="ř9: 0">9</i><i class="c empty" title="ř10: 0">10</i><i class="c empty" title="ř11: 0">11</i><i class="c empty" title="ř12: 0">12</i></div><p class="detail">řada 7: 29</p><p class="meta">v sále volno 1 · <a href="https://tickets.cinemacity.cz/order/233307" target="_blank" rel="noopener">koupit</a></p></article></div>
+</section>
+<section class="day some">
+<div class="day-rail">
+<span class="dow">st</span>
+<span class="dnum">26.</span>
+<span class="mon">8.</span>
+</div>
+<div class="day-body"><article class="shw early"><p class="shw-head"><a class="time" href="https://tickets.cinemacity.cz/order/233308" target="_blank" rel="noopener">09:00</a><span class="tag">do 16:00</span><span class="verdict">1 volné místo</span></p><div class="strip"><i class="c bad" title="ř1: 23">1</i><i class="c bad" title="ř2: 10">2</i><i class="c bad" title="ř3: 1">3</i><i class="c empty" title="ř4: 0">4</i><i class="c empty" title="ř5: 0">5</i><i class="c empty" title="ř6: 0">6</i><i class="c empty" title="ř7: 0">7</i><i class="c empty" title="ř8: 0">8</i><i class="c empty" title="ř9: 0">9</i><i class="c empty" title="ř10: 0">10</i><i class="c empty" title="ř11: 0">11</i><i class="c good" title="ř12: 1">12</i></div><p class="detail">řada 12: 20</p><p class="meta">v sále volno 35 · <a href="https://tickets.cinemacity.cz/order/233308" target="_blank" rel="noopener">koupit</a></p></article><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233309" target="_blank" rel="noopener">12:50</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (8)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233310" target="_blank" rel="noopener">16:40</a><span class="verdict">volno jen u plátna (2)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233311" target="_blank" rel="noopener">20:30</a><span class="verdict">vyprodáno</span></p></div>
+</section>
+<section class="day none">
+<div class="day-rail">
+<span class="dow">čt</span>
+<span class="dnum">27.</span>
+<span class="mon">8.</span>
+</div>
+<div class="day-body"><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233312" target="_blank" rel="noopener">11:00</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (19)</span></p><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233313" target="_blank" rel="noopener">15:00</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (8)</span></p></div>
+</section>
+<section class="day none">
+<div class="day-rail">
+<span class="dow">pá</span>
+<span class="dnum">28.</span>
+<span class="mon">8.</span>
+</div>
+<div class="day-body"><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233314" target="_blank" rel="noopener">09:00</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (25)</span></p><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233315" target="_blank" rel="noopener">12:50</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (8)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233316" target="_blank" rel="noopener">16:40</a><span class="verdict">vyprodáno</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233317" target="_blank" rel="noopener">20:30</a><span class="verdict">volno jen u plátna (1)</span></p></div>
+</section>
+<section class="day none">
+<div class="day-rail">
+<span class="dow">so</span>
+<span class="dnum">29.</span>
+<span class="mon">8.</span>
+</div>
+<div class="day-body"><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233319" target="_blank" rel="noopener">09:00</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (17)</span></p><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233318" target="_blank" rel="noopener">12:50</a><span class="tag">do 16:00</span><span class="verdict">vyprodáno</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233320" target="_blank" rel="noopener">16:40</a><span class="verdict">vyprodáno</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233321" target="_blank" rel="noopener">20:30</a><span class="verdict">volno jen u plátna (4)</span></p></div>
+</section>
+<section class="day none">
+<div class="day-rail">
+<span class="dow">ne</span>
+<span class="dnum">30.</span>
+<span class="mon">8.</span>
+</div>
+<div class="day-body"><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233322" target="_blank" rel="noopener">09:00</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (21)</span></p><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233323" target="_blank" rel="noopener">12:50</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (3)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233324" target="_blank" rel="noopener">16:40</a><span class="verdict">vyprodáno</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233325" target="_blank" rel="noopener">20:30</a><span class="verdict">volno jen u plátna (4)</span></p></div>
+</section>
+<section class="day none">
+<div class="day-rail">
+<span class="dow">po</span>
+<span class="dnum">31.</span>
+<span class="mon">8.</span>
+</div>
+<div class="day-body"><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233326" target="_blank" rel="noopener">09:00</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (44)</span></p><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233327" target="_blank" rel="noopener">12:50</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (33)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233328" target="_blank" rel="noopener">16:40</a><span class="verdict">volno jen u plátna (19)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233329" target="_blank" rel="noopener">20:30</a><span class="verdict">volno jen u plátna (17)</span></p></div>
+</section>
+<section class="day some">
+<div class="day-rail">
+<span class="dow">út</span>
+<span class="dnum">1.</span>
+<span class="mon">9.</span>
+</div>
+<div class="day-body"><article class="shw early"><p class="shw-head"><a class="time" href="https://tickets.cinemacity.cz/order/233330" target="_blank" rel="noopener">09:00</a><span class="tag">do 16:00</span><span class="verdict">11 volných míst · 2 vedle sebe</span></p><div class="strip"><i class="c bad" title="ř1: 23">1</i><i class="c bad" title="ř2: 23">2</i><i class="c bad" title="ř3: 17">3</i><i class="c bad" title="ř4: 9">4</i><i class="c good" title="ř5: 4">5</i><i class="c good" title="ř6: 2">6</i><i class="c good" title="ř7: 2">7</i><i class="c good" title="ř8: 1">8</i><i class="c empty" title="ř9: 0">9</i><i class="c good" title="ř10: 1">10</i><i class="c good" title="ř11: 1">11</i><i class="c empty" title="ř12: 0">12</i></div><p class="detail">řada 5: 31–32, 1–2 · řada 6: 32, 1 · řada 7: 35, 1 · řada 8: 38 · řada 10: 1 · řada 11: 1</p><p class="meta">v sále volno 83 · <a href="https://tickets.cinemacity.cz/order/233330" target="_blank" rel="noopener">koupit</a></p></article><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233331" target="_blank" rel="noopener">12:50</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (61)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233332" target="_blank" rel="noopener">16:40</a><span class="verdict">volno jen u plátna (23)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233333" target="_blank" rel="noopener">20:30</a><span class="verdict">volno jen u plátna (25)</span></p></div>
+</section>
+<section class="day some">
+<div class="day-rail">
+<span class="dow">st</span>
+<span class="dnum">2.</span>
+<span class="mon">9.</span>
+</div>
+<div class="day-body"><article class="shw early"><p class="shw-head"><a class="time" href="https://tickets.cinemacity.cz/order/233334" target="_blank" rel="noopener">11:00</a><span class="tag">do 16:00</span><span class="verdict">6 volných míst · 2 vedle sebe</span></p><div class="strip"><i class="c bad" title="ř1: 23">1</i><i class="c bad" title="ř2: 16">2</i><i class="c bad" title="ř3: 12">3</i><i class="c bad" title="ř4: 8">4</i><i class="c good" title="ř5: 3">5</i><i class="c good" title="ř6: 1">6</i><i class="c good" title="ř7: 1">7</i><i class="c good" title="ř8: 1">8</i><i class="c empty" title="ř9: 0">9</i><i class="c empty" title="ř10: 0">10</i><i class="c empty" title="ř11: 0">11</i><i class="c empty" title="ř12: 0">12</i></div><p class="detail">řada 5: 1–2, 32 · řada 6: 1 · řada 7: 35 · řada 8: 38</p><p class="meta">v sále volno 65 · <a href="https://tickets.cinemacity.cz/order/233334" target="_blank" rel="noopener">koupit</a></p></article><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233335" target="_blank" rel="noopener">15:00</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (46)</span></p></div>
+</section>
+<section class="day some">
+<div class="day-rail">
+<span class="dow">čt</span>
+<span class="dnum">3.</span>
+<span class="mon">9.</span>
+</div>
+<div class="day-body"><article class="shw early"><p class="shw-head"><a class="time" href="https://tickets.cinemacity.cz/order/233336" target="_blank" rel="noopener">09:00</a><span class="tag">do 16:00</span><span class="verdict">13 volných míst · 4 vedle sebe</span></p><div class="strip"><i class="c bad" title="ř1: 23">1</i><i class="c bad" title="ř2: 23">2</i><i class="c bad" title="ř3: 14">3</i><i class="c bad" title="ř4: 12">4</i><i class="c good" title="ř5: 8">5</i><i class="c good" title="ř6: 2">6</i><i class="c good" title="ř7: 3">7</i><i class="c empty" title="ř8: 0">8</i><i class="c empty" title="ř9: 0">9</i><i class="c empty" title="ř10: 0">10</i><i class="c empty" title="ř11: 0">11</i><i class="c empty" title="ř12: 0">12</i></div><p class="detail">řada 5: 29–32 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 6: 31, 3 · řada 7: 33–34, 3</p><p class="meta">v sále volno 85 · <a href="https://tickets.cinemacity.cz/order/233336" target="_blank" rel="noopener">koupit</a></p></article><article class="shw early"><p class="shw-head"><a class="time" href="https://tickets.cinemacity.cz/order/233337" target="_blank" rel="noopener">12:50</a><span class="tag">do 16:00</span><span class="verdict">6 volných míst · 2 vedle sebe</span></p><div class="strip"><i class="c bad" title="ř1: 20">1</i><i class="c bad" title="ř2: 22">2</i><i class="c bad" title="ř3: 16">3</i><i class="c bad" title="ř4: 9">4</i><i class="c good" title="ř5: 3">5</i><i class="c good" title="ř6: 2">6</i><i class="c empty" title="ř7: 0">7</i><i class="c good" title="ř8: 1">8</i><i class="c empty" title="ř9: 0">9</i><i class="c empty" title="ř10: 0">10</i><i class="c empty" title="ř11: 0">11</i><i class="c empty" title="ř12: 0">12</i></div><p class="detail">řada 5: 1–2, 32 · řada 6: 1–2 · řada 8: 1</p><p class="meta">v sále volno 73 · <a href="https://tickets.cinemacity.cz/order/233337" target="_blank" rel="noopener">koupit</a></p></article><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233338" target="_blank" rel="noopener">16:40</a><span class="verdict">volno jen u plátna (23)</span></p></div>
+</section>
+<section class="day some">
+<div class="day-rail">
+<span class="dow">pá</span>
+<span class="dnum">4.</span>
+<span class="mon">9.</span>
+</div>
+<div class="day-body"><article class="shw early"><p class="shw-head"><a class="time" href="https://tickets.cinemacity.cz/order/233340" target="_blank" rel="noopener">09:00</a><span class="tag">do 16:00</span><span class="verdict">10 volných míst · 3 vedle sebe</span></p><div class="strip"><i class="c bad" title="ř1: 23">1</i><i class="c bad" title="ř2: 23">2</i><i class="c bad" title="ř3: 17">3</i><i class="c bad" title="ř4: 9">4</i><i class="c good" title="ř5: 5">5</i><i class="c good" title="ř6: 3">6</i><i class="c empty" title="ř7: 0">7</i><i class="c good" title="ř8: 1">8</i><i class="c good" title="ř9: 1">9</i><i class="c empty" title="ř10: 0">10</i><i class="c empty" title="ř11: 0">11</i><i class="c empty" title="ř12: 0">12</i></div><p class="detail">řada 5: 30–32 (3 vedle sebe), 1–2 · řada 6: 1–2, 32 · řada 8: 3 · řada 9: 38</p><p class="meta">v sále volno 82 · <a href="https://tickets.cinemacity.cz/order/233340" target="_blank" rel="noopener">koupit</a></p></article><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233341" target="_blank" rel="noopener">12:50</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (55)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233342" target="_blank" rel="noopener">16:40</a><span class="verdict">volno jen u plátna (28)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233343" target="_blank" rel="noopener">20:30</a><span class="verdict">volno jen u plátna (11)</span></p></div>
+</section>
+<section class="day none">
+<div class="day-rail">
+<span class="dow">so</span>
+<span class="dnum">5.</span>
+<span class="mon">9.</span>
+</div>
+<div class="day-body"><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233344" target="_blank" rel="noopener">09:00</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (34)</span></p><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233345" target="_blank" rel="noopener">12:50</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (30)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233346" target="_blank" rel="noopener">16:40</a><span class="verdict">volno jen u plátna (12)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233347" target="_blank" rel="noopener">20:30</a><span class="verdict">volno jen u plátna (27)</span></p></div>
+</section>
+<section class="day none">
+<div class="day-rail">
+<span class="dow">ne</span>
+<span class="dnum">6.</span>
+<span class="mon">9.</span>
+</div>
+<div class="day-body"><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233348" target="_blank" rel="noopener">09:00</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (41)</span></p><p class="shw none early"><a class="time" href="https://tickets.cinemacity.cz/order/233349" target="_blank" rel="noopener">12:50</a><span class="tag">do 16:00</span><span class="verdict">volno jen u plátna (28)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233350" target="_blank" rel="noopener">16:40</a><span class="verdict">volno jen u plátna (17)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233351" target="_blank" rel="noopener">20:30</a><span class="verdict">volno jen u plátna (29)</span></p></div>
+</section>
+<section class="day some">
+<div class="day-rail">
+<span class="dow">po</span>
+<span class="dnum">7.</span>
+<span class="mon">9.</span>
+</div>
+<div class="day-body"><article class="shw early"><p class="shw-head"><a class="time" href="https://tickets.cinemacity.cz/order/233352" target="_blank" rel="noopener">09:00</a><span class="tag">do 16:00</span><span class="verdict">13 volných míst · 3 vedle sebe</span></p><div class="strip"><i class="c bad" title="ř1: 23">1</i><i class="c bad" title="ř2: 23">2</i><i class="c bad" title="ř3: 16">3</i><i class="c bad" title="ř4: 9">4</i><i class="c good" title="ř5: 6">5</i><i class="c good" title="ř6: 2">6</i><i class="c good" title="ř7: 1">7</i><i class="c empty" title="ř8: 0">8</i><i class="c good" title="ř9: 1">9</i><i class="c good" title="ř10: 2">10</i><i class="c good" title="ř11: 1">11</i><i class="c empty" title="ř12: 0">12</i></div><p class="detail">řada 5: 30–32 (3 vedle sebe), 1–3 (3 vedle sebe) · řada 6: 1–2 · řada 7: 1 · řada 9: 38 · řada 10: 38, 1 · řada 11: 1</p><p class="meta">v sále volno 84 · <a href="https://tickets.cinemacity.cz/order/233352" target="_blank" rel="noopener">koupit</a></p></article><article class="shw early"><p class="shw-head"><a class="time" href="https://tickets.cinemacity.cz/order/233353" target="_blank" rel="noopener">12:50</a><span class="tag">do 16:00</span><span class="verdict">5 volných míst · 2 vedle sebe</span></p><div class="strip"><i class="c bad" title="ř1: 23">1</i><i class="c bad" title="ř2: 21">2</i><i class="c bad" title="ř3: 14">3</i><i class="c bad" title="ř4: 7">4</i><i class="c good" title="ř5: 4">5</i><i class="c good" title="ř6: 1">6</i><i class="c empty" title="ř7: 0">7</i><i class="c empty" title="ř8: 0">8</i><i class="c empty" title="ř9: 0">9</i><i class="c empty" title="ř10: 0">10</i><i class="c empty" title="ř11: 0">11</i><i class="c empty" title="ř12: 0">12</i></div><p class="detail">řada 5: 31–32, 1–2 · řada 6: 1</p><p class="meta">v sále volno 70 · <a href="https://tickets.cinemacity.cz/order/233353" target="_blank" rel="noopener">koupit</a></p></article><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233354" target="_blank" rel="noopener">16:40</a><span class="verdict">volno jen u plátna (38)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233355" target="_blank" rel="noopener">20:30</a><span class="verdict">volno jen u plátna (26)</span></p></div>
+</section>
+<section class="day some">
+<div class="day-rail">
+<span class="dow">út</span>
+<span class="dnum">8.</span>
+<span class="mon">9.</span>
+</div>
+<div class="day-body"><article class="shw early"><p class="shw-head"><a class="time" href="https://tickets.cinemacity.cz/order/233356" target="_blank" rel="noopener">09:00</a><span class="tag">do 16:00</span><span class="verdict">5 volných míst · 2 vedle sebe</span></p><div class="strip"><i class="c bad" title="ř1: 23">1</i><i class="c bad" title="ř2: 23">2</i><i class="c bad" title="ř3: 17">3</i><i class="c bad" title="ř4: 11">4</i><i class="c good" title="ř5: 3">5</i><i class="c good" title="ř6: 1">6</i><i class="c empty" title="ř7: 0">7</i><i class="c empty" title="ř8: 0">8</i><i class="c good" title="ř9: 1">9</i><i class="c empty" title="ř10: 0">10</i><i class="c empty" title="ř11: 0">11</i><i class="c empty" title="ř12: 0">12</i></div><p class="detail">řada 5: 31–32, 1 · řada 6: 1 · řada 9: 1</p><p class="meta">v sále volno 79 · <a href="https://tickets.cinemacity.cz/order/233356" target="_blank" rel="noopener">koupit</a></p></article><article class="shw early"><p class="shw-head"><a class="time" href="https://tickets.cinemacity.cz/order/233357" target="_blank" rel="noopener">12:50</a><span class="tag">do 16:00</span><span class="verdict">3 volná místa · 3 vedle sebe</span></p><div class="strip"><i class="c bad" title="ř1: 23">1</i><i class="c bad" title="ř2: 23">2</i><i class="c bad" title="ř3: 9">3</i><i class="c bad" title="ř4: 3">4</i><i class="c good" title="ř5: 3">5</i><i class="c empty" title="ř6: 0">6</i><i class="c empty" title="ř7: 0">7</i><i class="c empty" title="ř8: 0">8</i><i class="c empty" title="ř9: 0">9</i><i class="c empty" title="ř10: 0">10</i><i class="c empty" title="ř11: 0">11</i><i class="c empty" title="ř12: 0">12</i></div><p class="detail">řada 5: 1–3 (3 vedle sebe)</p><p class="meta">v sále volno 61 · <a href="https://tickets.cinemacity.cz/order/233357" target="_blank" rel="noopener">koupit</a></p></article><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233358" target="_blank" rel="noopener">16:40</a><span class="verdict">volno jen u plátna (37)</span></p><p class="shw none"><a class="time" href="https://tickets.cinemacity.cz/order/233359" target="_blank" rel="noopener">20:30</a><span class="verdict">volno jen u plátna (15)</span></p></div>
+</section>
+</div>
+<footer>
+<p>Aktualizováno 25. 8. 2026 v 17:10 · rozpis kina končí 8. září, další dny se teprve objeví.</p>
+<p><a href="https://www.cinemacity.cz/films/odyssea/7268s2r" target="_blank" rel="noopener">Stránka filmu</a> · <a href="https://github.com/DouJohn09/cinemacity-watchdog" target="_blank" rel="noopener">hlídač na GitHubu</a> posílá e-mail, když se místo uvolní.</p>
+</footer>
 </div>

@@ -119,51 +119,52 @@ def seat_word(n):
 
 
 def row_strip(s):
-    """Pásek řad 1..N: šířka buňky = řada, výplň = kolik je v ní volno."""
+    """Pásek řad 1..N: buňka = řada, výplň = jestli je v ní volno.
+
+    Titulky jsou schválně krátké (`ř7: 3`): stránka se publikuje jako artifact
+    a ten se před přepsáním musí celý přečíst — dlouhé titulky u 12 buněk krát
+    50 projekcí z ní udělaly 100 kB, což se do jednoho čtení nevešlo.
+    """
     cells = []
     top = max(int(r) for r in s["per_row"]) if s["per_row"] else 12
     top = max(top, s.get("max_row") or 12)
     for r in range(1, top + 1):
         free = s["per_row"].get(str(r), 0)
-        good = r >= MIN_ROW
-        state = "empty" if free == 0 else ("good" if good else "bad")
-        title = f"řada {r}: {seat_word(free)}" + ("" if good else " (blízko plátna)")
-        cells.append(
-            f'<span class="cell {state}" title="{html.escape(title)}">'
-            f'<span class="num">{r}</span></span>'
-        )
-    return '<div class="strip" aria-hidden="false">' + "".join(cells) + "</div>"
+        state = "empty" if free == 0 else ("good" if r >= MIN_ROW else "bad")
+        cells.append(f'<i class="c {state}" title="ř{r}: {free}">{r}</i>')
+    return '<div class="strip">' + "".join(cells) + "</div>"
 
 
 def screening_card(s):
-    classes = ["shw"]
-    if s["match"]:
-        classes.append("hit")
+    """Projekce s volnými dobrými místy = karta s páskem řad a výpisem sedadel.
+
+    Projekce, kde od MIN_ROW nic není (většina), se vypíše jen jedním řádkem.
+    Pásek samých obsazených buněk nic neříká a stránku jen nafukuje.
+    """
+    early = "" if s["late"] else f'<span class="tag">do {FROM_HOUR}:00</span>'
+    near = s["free_regular"] - s["good_seats"]
+
+    if s["good_seats"] == 0:
+        note = f'volno jen u plátna ({near})' if near else "vyprodáno"
+        return (f'<p class="shw none{"" if s["late"] else " early"}">'
+                f'<a class="time" href="{html.escape(s["booking"])}" target="_blank" rel="noopener">{s["time"]}</a>'
+                f'{early}<span class="verdict">{note}</span></p>')
+
+    verdict = seat_word(s["good_seats"])
+    if s["best_block"] >= 2:
+        verdict += f" · {s['best_block']} vedle sebe"
+    cls = "shw hit" if s["match"] else "shw"
     if not s["late"]:
-        classes.append("early")
-    if s["good_seats"] == 0:
-        classes.append("none")
-
-    if s["good_seats"] == 0:
-        verdict = "nic od řady %d" % MIN_ROW
-    else:
-        verdict = seat_word(s["good_seats"])
-        if s["best_block"] >= 2:
-            verdict += f" · {s['best_block']} vedle sebe"
-
-    tag = "" if s["late"] else f'<span class="tag">před {FROM_HOUR}:00</span>'
-    detail = f'<p class="detail">{html.escape(s["detail"])}</p>' if s["detail"] else ""
-    return f"""
-      <article class="{' '.join(classes)}">
-        <div class="shw-head">
-          <a class="time" href="{html.escape(s['booking'])}" target="_blank" rel="noopener">{s['time']}</a>
-          {tag}
-          <span class="verdict">{html.escape(verdict)}</span>
-        </div>
-        {row_strip(s)}
-        {detail}
-        <p class="meta">v sále volno {s['free_regular']} z {s['hall_size'] - s['free_accessible']} · <a href="{html.escape(s['booking'])}" target="_blank" rel="noopener">koupit</a></p>
-      </article>"""
+        cls += " early"
+    return (f'<article class="{cls}">'
+            f'<p class="shw-head">'
+            f'<a class="time" href="{html.escape(s["booking"])}" target="_blank" rel="noopener">{s["time"]}</a>'
+            f'{early}<span class="verdict">{html.escape(verdict)}</span></p>'
+            f'{row_strip(s)}'
+            f'<p class="detail">{html.escape(s["detail"])}</p>'
+            f'<p class="meta">v sále volno {s["free_regular"]} · '
+            f'<a href="{html.escape(s["booking"])}" target="_blank" rel="noopener">koupit</a></p>'
+            f'</article>')
 
 
 def render_html(data):
@@ -315,9 +316,9 @@ h1 .film {{ color: var(--accent); }}
 .dow {{ font: 500 .7rem/1 "IBM Plex Mono", monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }}
 .dnum {{ font-size: 1.5rem; line-height: 1.1; font-variant-numeric: tabular-nums; }}
 .mon {{ font: 400 .72rem/1 "IBM Plex Mono", monospace; color: var(--muted); }}
-.day-body {{ display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; padding: .6rem .9rem .7rem 0; }}
+.day-body {{ display: flex; flex-wrap: wrap; align-items: baseline; gap: .35rem 1.5rem; padding: .6rem .9rem .7rem 0; }}
 
-.shw {{ min-width: 15rem; flex: 1 1 15rem; padding: .35rem 0; }}
+.shw {{ min-width: 14rem; flex: 1 1 14rem; padding: .35rem 0; }}
 .shw-head {{ display: flex; align-items: baseline; gap: .5rem; flex-wrap: wrap; }}
 .time {{ font-size: 1.15rem; text-decoration: none; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }}
 .time:hover {{ border-bottom-color: var(--accent); color: var(--accent); }}
@@ -331,12 +332,11 @@ h1 .film {{ color: var(--accent); }}
 .meta a {{ color: var(--accent); }}
 
 .strip {{ display: flex; gap: 2px; margin-top: .4rem; }}
-.cell {{ position: relative; flex: 1 1 auto; height: 1.15rem; border-radius: 1px; background: var(--panel-2); border: 1px solid var(--line); display: grid; place-items: center; }}
-.cell .num {{ font: 400 .58rem/1 "IBM Plex Mono", monospace; color: var(--dim); }}
-.cell.bad {{ background: var(--dim); border-color: var(--dim); }}
-.cell.bad .num {{ color: var(--panel); }}
-.cell.good {{ background: var(--yes); border-color: var(--yes); }}
-.cell.good .num {{ color: var(--panel); }}
+.shw.none {{ margin: 0; display: flex; align-items: baseline; gap: .5rem; flex: 0 1 auto; min-width: 0; }}
+.shw.none .verdict {{ font-size: .82rem; }}
+.c {{ flex: 1 1 auto; height: 1.15rem; font: 400 .58rem/1.15rem "IBM Plex Mono", monospace; text-align: center; font-style: normal; color: var(--dim); border-radius: 1px; background: var(--panel-2); border: 1px solid var(--line); }}
+.c.bad {{ background: var(--dim); border-color: var(--dim); color: var(--panel); }}
+.c.good {{ background: var(--yes); border-color: var(--yes); color: var(--panel); }}
 
 .legend {{ display: flex; flex-wrap: wrap; gap: .35rem 1.25rem; font-size: .8rem; color: var(--muted); }}
 .legend span {{ display: inline-flex; align-items: center; gap: .4rem; }}
@@ -378,7 +378,7 @@ footer a {{ color: var(--accent); }}
       <span><i class="swatch good"></i> volno v řadě {MIN_ROW}+</span>
       <span><i class="swatch bad"></i> volno blízko plátna</span>
       <span><i class="swatch empty"></i> obsazeno</span>
-      <span>pásek = řady 1 → {scr[0]['max_row'] if scr else 12} od plátna</span>
+      <span>pásek u termínů s volnem = řady 1 → {scr[0]["max_row"] if scr else 12} od plátna</span>
     </p>
 {''.join(day_blocks)}
   </div>
@@ -391,13 +391,19 @@ footer a {{ color: var(--accent); }}
 """
 
 
+def squeeze(markup):
+    """Zahodí odsazení a prázdné řádky — kvůli velikosti publikované stránky."""
+    lines = [ln.rstrip() for ln in markup.split("\n")]
+    return "\n".join(ln.lstrip() if ln.startswith(" ") else ln for ln in lines if ln.strip())
+
+
 def main():
     data = collect_data()
     with open(OUT_JSON, "w", encoding="utf-8") as fh:
         json.dump(data, fh, ensure_ascii=False, indent=1)
         fh.write("\n")
     with open(OUT_HTML, "w", encoding="utf-8") as fh:
-        fh.write(render_html(data))
+        fh.write(squeeze(render_html(data)))
     hits = [s for s in data["screenings"] if s["match"]]
     print(f"projekcí: {len(data['screenings'])} · projde kritériem: {len(hits)}")
     for s in hits:
