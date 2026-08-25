@@ -7,11 +7,11 @@ name: Přehled volných míst
 # (Tunnel connection failed). Data se proto tahají tady, kde je síť otevřená,
 # a rutina si pak hotové HTML jen stáhne z raw.githubusercontent.com.
 #
-# Běží 15 minut před rutinou (ta jede 6:00/12:00/18:00 UTC), takže publikovaná
-# stránka je vždy maximálně čtvrt hodiny stará.
+# Běží 15 minut před rutinou (ta jede 6/10/14/18 UTC, tedy 8/12/16/20 Praha),
+# takže publikovaná stránka je vždy maximálně čtvrt hodiny stará.
 on:
   schedule:
-    - cron: "45 5,11,17 * * *"
+    - cron: "45 5,9,13,17 * * *"
   workflow_dispatch:
 
 concurrency:
