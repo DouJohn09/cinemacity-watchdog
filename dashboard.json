@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-25T16:56:54",
+ "generated": "2026-08-25T17:06:14",
  "criteria": {
   "min_row": 5,
   "min_seats": 3,
@@ -27,21 +27,22 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 2,
-   "free_accessible": 4,
+   "free_regular": 1,
+   "free_accessible": 5,
    "per_row": {
     "1": 0,
     "2": 0,
     "3": 0,
     "4": 0,
     "5": 0,
-    "6": 1,
-    "7": 1
+    "6": 0,
+    "7": 0,
+    "8": 1
    },
    "max_row": 12,
-   "good_seats": 2,
+   "good_seats": 1,
    "best_block": 1,
-   "detail": "řada 6: 27 · řada 7: 31",
+   "detail": "řada 8: 27",
    "late": true,
    "match": false
   },
@@ -64,10 +65,10 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 35,
+   "free_regular": 33,
    "free_accessible": 6,
    "per_row": {
-    "1": 23,
+    "1": 21,
     "2": 10,
     "3": 1,
     "4": 0,
@@ -106,10 +107,10 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 6,
+   "free_regular": 8,
    "free_accessible": 6,
    "per_row": {
-    "1": 5,
+    "1": 7,
     "2": 1
    },
    "max_row": 12,
@@ -138,10 +139,10 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 3,
+   "free_regular": 2,
    "free_accessible": 6,
    "per_row": {
-    "1": 3
+    "1": 2
    },
    "max_row": 12,
    "good_seats": 0,
@@ -700,10 +701,10 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 43,
+   "free_regular": 44,
    "free_accessible": 6,
    "per_row": {
-    "1": 22,
+    "1": 23,
     "2": 17,
     "3": 4
    },
@@ -1008,10 +1009,10 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 43,
+   "free_regular": 46,
    "free_accessible": 6,
    "per_row": {
-    "1": 20,
+    "1": 23,
     "2": 18,
     "3": 4,
     "4": 1
@@ -1359,10 +1360,10 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 11,
+   "free_regular": 12,
    "free_accessible": 6,
    "per_row": {
-    "1": 8,
+    "1": 9,
     "2": 3
    },
    "max_row": 12,
@@ -1491,10 +1492,10 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 16,
+   "free_regular": 17,
    "free_accessible": 6,
    "per_row": {
-    "1": 16
+    "1": 17
    },
    "max_row": 12,
    "good_seats": 0,
@@ -1554,7 +1555,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 84,
+   "free_regular": 81,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
@@ -1565,14 +1566,14 @@
     "6": 2,
     "7": 1,
     "8": 0,
-    "9": 1,
-    "10": 2,
+    "9": 0,
+    "10": 0,
     "11": 1
    },
    "max_row": 12,
-   "good_seats": 13,
+   "good_seats": 10,
    "best_block": 3,
-   "detail": "řada 5: 30–32 (3 vedle sebe), 1–3 (3 vedle sebe) · řada 6: 1–2 · řada 7: 1 · řada 9: 38 · řada 10: 38, 1 · řada 11: 1",
+   "detail": "řada 5: 30–32 (3 vedle sebe), 1–3 (3 vedle sebe) · řada 6: 1–2 · řada 7: 1 · řada 11: 1",
    "late": false,
    "match": false
   },
@@ -1595,20 +1596,20 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 69,
+   "free_regular": 70,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 21,
     "3": 14,
     "4": 7,
-    "5": 3,
+    "5": 4,
     "6": 1
    },
    "max_row": 12,
-   "good_seats": 4,
+   "good_seats": 5,
    "best_block": 2,
-   "detail": "řada 5: 1–2, 32 · řada 6: 1",
+   "detail": "řada 5: 31–32, 1–2 · řada 6: 1",
    "late": false,
    "match": false
   },
@@ -1665,10 +1666,10 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 28,
+   "free_regular": 26,
    "free_accessible": 6,
    "per_row": {
-    "1": 20,
+    "1": 18,
     "2": 6,
     "3": 1,
     "4": 1
@@ -1699,12 +1700,12 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 81,
+   "free_regular": 79,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
-    "3": 19,
+    "3": 17,
     "4": 11,
     "5": 3,
     "6": 1,
@@ -1738,11 +1739,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 60,
+   "free_regular": 61,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
-    "2": 22,
+    "2": 23,
     "3": 9,
     "4": 3,
     "5": 3
@@ -1773,11 +1774,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 36,
+   "free_regular": 37,
    "free_accessible": 5,
    "per_row": {
     "1": 23,
-    "2": 9,
+    "2": 10,
     "3": 4
    },
    "max_row": 12,
