@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-26T09:12:32",
+ "generated": "2026-08-26T10:10:31",
  "criteria": {
   "min_row": 5,
   "min_seats": 3,
@@ -27,22 +27,20 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 11,
+   "free_regular": 10,
    "free_accessible": 6,
    "per_row": {
     "1": 6,
     "2": 0,
     "3": 0,
-    "4": 0,
+    "4": 1,
     "5": 0,
-    "6": 3,
-    "7": 0,
-    "8": 2
+    "6": 3
    },
    "max_row": 12,
-   "good_seats": 5,
+   "good_seats": 3,
    "best_block": 3,
-   "detail": "řada 6: 1–3 (3 vedle sebe) · řada 8: 29–30",
+   "detail": "řada 6: 1–3 (3 vedle sebe)",
    "late": false,
    "match": false
   },
@@ -174,24 +172,16 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 10,
+   "free_regular": 5,
    "free_accessible": 5,
    "per_row": {
-    "1": 8,
-    "2": 1,
-    "3": 0,
-    "4": 0,
-    "5": 0,
-    "6": 0,
-    "7": 0,
-    "8": 0,
-    "9": 0,
-    "10": 1
+    "1": 4,
+    "2": 1
    },
    "max_row": 12,
-   "good_seats": 1,
-   "best_block": 1,
-   "detail": "řada 10: 24",
+   "good_seats": 0,
+   "best_block": 0,
+   "detail": "",
    "late": false,
    "match": false
   },
@@ -766,22 +756,22 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 78,
+   "free_regular": 79,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
     "3": 17,
     "4": 9,
-    "5": 2,
+    "5": 3,
     "6": 2,
     "7": 1,
     "8": 1
    },
    "max_row": 12,
-   "good_seats": 6,
+   "good_seats": 7,
    "best_block": 2,
-   "detail": "řada 5: 31–32 · řada 6: 32, 1 · řada 7: 35 · řada 8: 38",
+   "detail": "řada 5: 31–32, 12 · řada 6: 32, 1 · řada 7: 35 · řada 8: 38",
    "late": false,
    "match": false
   },
@@ -903,19 +893,20 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 58,
+   "free_regular": 59,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 16,
     "3": 10,
     "4": 6,
-    "5": 3
+    "5": 3,
+    "6": 1
    },
    "max_row": 12,
-   "good_seats": 3,
+   "good_seats": 4,
    "best_block": 2,
-   "detail": "řada 5: 1–2, 32",
+   "detail": "řada 5: 1–2, 32 · řada 6: 1",
    "late": false,
    "match": false
   },
@@ -1050,11 +1041,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 22,
+   "free_regular": 21,
    "free_accessible": 6,
    "per_row": {
     "1": 14,
-    "2": 7,
+    "2": 6,
     "3": 0,
     "4": 1
    },
@@ -1191,17 +1182,21 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 11,
+   "free_regular": 15,
    "free_accessible": 6,
    "per_row": {
-    "1": 11
+    "1": 11,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 4
    },
    "max_row": 12,
-   "good_seats": 0,
-   "best_block": 0,
-   "detail": "",
+   "good_seats": 4,
+   "best_block": 4,
+   "detail": "řada 5: 24–27 (4 vedle sebe)",
    "late": true,
-   "match": false
+   "match": true
   },
   {
    "datetime": "2026-09-05T09:00:00",
@@ -1321,13 +1316,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 29,
+   "free_regular": 27,
    "free_accessible": 6,
    "per_row": {
     "1": 21,
-    "2": 6,
-    "3": 1,
-    "4": 1
+    "2": 6
    },
    "max_row": 12,
    "good_seats": 0,
@@ -1557,13 +1550,12 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 37,
+   "free_regular": 35,
    "free_accessible": 6,
    "per_row": {
     "1": 22,
     "2": 11,
-    "3": 2,
-    "4": 2
+    "3": 2
    },
    "max_row": 12,
    "good_seats": 0,
@@ -1625,11 +1617,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 77,
+   "free_regular": 76,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
-    "2": 23,
+    "2": 22,
     "3": 18,
     "4": 8,
     "5": 3,
@@ -1699,11 +1691,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 37,
+   "free_regular": 34,
    "free_accessible": 5,
    "per_row": {
-    "1": 23,
-    "2": 10,
+    "1": 22,
+    "2": 8,
     "3": 4
    },
    "max_row": 12,
@@ -1732,10 +1724,10 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 15,
+   "free_regular": 14,
    "free_accessible": 6,
    "per_row": {
-    "1": 12,
+    "1": 11,
     "2": 3
    },
    "max_row": 12,
