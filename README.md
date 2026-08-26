@@ -1,5 +1,11 @@
 # cinemacity-watchdog
 
+> **Stav k 26. 8. 2026: lístky jsou koupené, e-mailové hlášení je vypnuté.**
+> Workflow `watch.yml`, které zakládalo issues (a tím posílalo e-maily a pushe),
+> je smazané — obnovit se dá z historie gitu (`git log -- .github/workflows/watch.yml`).
+> Skript `watch.py` zůstává: čte z něj přehled (`dashboard.py`), který dál běží
+> každou hodinu ve workflow `dashboard.yml` a publikuje stránku s volnými místy.
+
 Hlídá rozpis [Cinema City](https://www.cinemacity.cz) a hlásí dvě věci:
 
 1. **nový termín Odyssei v IMAXu** — přibyl v rozpisu další hrací den,
