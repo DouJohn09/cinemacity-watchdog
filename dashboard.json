@@ -1,5 +1,5 @@
 {
- "generated": "2026-08-26T10:10:31",
+ "generated": "2026-08-26T10:45:36",
  "criteria": {
   "min_row": 5,
   "min_seats": 3,
@@ -34,13 +34,13 @@
     "2": 0,
     "3": 0,
     "4": 1,
-    "5": 0,
-    "6": 3
+    "5": 1,
+    "6": 2
    },
    "max_row": 12,
    "good_seats": 3,
-   "best_block": 3,
-   "detail": "řada 6: 1–3 (3 vedle sebe)",
+   "best_block": 1,
+   "detail": "řada 5: 2 · řada 6: 3, 1",
    "late": false,
    "match": false
   },
@@ -172,10 +172,10 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 5,
+   "free_regular": 9,
    "free_accessible": 5,
    "per_row": {
-    "1": 4,
+    "1": 8,
     "2": 1
    },
    "max_row": 12,
@@ -235,12 +235,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 8,
+   "free_regular": 6,
    "free_accessible": 6,
    "per_row": {
     "1": 4,
-    "2": 2,
-    "3": 2
+    "2": 2
    },
    "max_row": 12,
    "good_seats": 0,
@@ -487,12 +486,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 19,
+   "free_regular": 16,
    "free_accessible": 6,
    "per_row": {
-    "1": 16,
-    "2": 2,
-    "3": 1
+    "1": 14,
+    "2": 2
    },
    "max_row": 12,
    "good_seats": 0,
@@ -594,11 +592,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 6,
+   "free_regular": 5,
    "free_accessible": 6,
    "per_row": {
     "1": 4,
-    "2": 2
+    "2": 1
    },
    "max_row": 12,
    "good_seats": 0,
@@ -626,11 +624,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 43,
+   "free_regular": 41,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
-    "2": 16,
+    "2": 14,
     "3": 4
    },
    "max_row": 12,
@@ -724,10 +722,10 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 15,
+   "free_regular": 11,
    "free_accessible": 6,
    "per_row": {
-    "1": 13,
+    "1": 9,
     "2": 2
    },
    "max_row": 12,
@@ -756,22 +754,22 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 79,
+   "free_regular": 78,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
     "3": 17,
     "4": 9,
-    "5": 3,
+    "5": 2,
     "6": 2,
     "7": 1,
     "8": 1
    },
    "max_row": 12,
-   "good_seats": 7,
+   "good_seats": 6,
    "best_block": 2,
-   "detail": "řada 5: 31–32, 12 · řada 6: 32, 1 · řada 7: 35 · řada 8: 38",
+   "detail": "řada 5: 31–32 · řada 6: 32, 1 · řada 7: 35 · řada 8: 38",
    "late": false,
    "match": false
   },
@@ -860,11 +858,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 25,
+   "free_regular": 24,
    "free_accessible": 6,
    "per_row": {
     "1": 14,
-    "2": 10,
+    "2": 9,
     "3": 1
    },
    "max_row": 12,
@@ -893,20 +891,19 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 59,
+   "free_regular": 58,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 16,
     "3": 10,
     "4": 6,
-    "5": 3,
-    "6": 1
+    "5": 3
    },
    "max_row": 12,
-   "good_seats": 4,
+   "good_seats": 3,
    "best_block": 2,
-   "detail": "řada 5: 1–2, 32 · řada 6: 1",
+   "detail": "řada 5: 1–2, 32",
    "late": false,
    "match": false
   },
@@ -1041,11 +1038,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 21,
+   "free_regular": 22,
    "free_accessible": 6,
    "per_row": {
     "1": 14,
-    "2": 6,
+    "2": 7,
     "3": 0,
     "4": 1
    },
@@ -1182,21 +1179,21 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 15,
+   "free_regular": 12,
    "free_accessible": 6,
    "per_row": {
-    "1": 11,
+    "1": 10,
     "2": 0,
     "3": 0,
     "4": 0,
-    "5": 4
+    "5": 2
    },
    "max_row": 12,
-   "good_seats": 4,
-   "best_block": 4,
-   "detail": "řada 5: 24–27 (4 vedle sebe)",
+   "good_seats": 2,
+   "best_block": 2,
+   "detail": "řada 5: 26–27",
    "late": true,
-   "match": true
+   "match": false
   },
   {
    "datetime": "2026-09-05T09:00:00",
@@ -1316,11 +1313,13 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 27,
+   "free_regular": 29,
    "free_accessible": 6,
    "per_row": {
     "1": 21,
-    "2": 6
+    "2": 6,
+    "3": 1,
+    "4": 1
    },
    "max_row": 12,
    "good_seats": 0,
@@ -1550,12 +1549,13 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 35,
+   "free_regular": 37,
    "free_accessible": 6,
    "per_row": {
     "1": 22,
     "2": 11,
-    "3": 2
+    "3": 2,
+    "4": 2
    },
    "max_row": 12,
    "good_seats": 0,
@@ -1617,11 +1617,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 76,
+   "free_regular": 77,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
-    "2": 22,
+    "2": 23,
     "3": 18,
     "4": 8,
     "5": 3,
@@ -1691,11 +1691,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 34,
+   "free_regular": 36,
    "free_accessible": 5,
    "per_row": {
     "1": 22,
-    "2": 8,
+    "2": 10,
     "3": 4
    },
    "max_row": 12,
@@ -1724,10 +1724,10 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 14,
+   "free_regular": 16,
    "free_accessible": 6,
    "per_row": {
-    "1": 11,
+    "1": 13,
     "2": 3
    },
    "max_row": 12,
@@ -1735,6 +1735,90 @@
    "best_block": 0,
    "detail": "",
    "late": true,
+   "match": false
+  },
+  {
+   "datetime": "2026-09-09T09:00:00",
+   "date": "2026-09-09",
+   "time": "09:00",
+   "weekday": 2,
+   "cinema": "Praha Flora, OC FLORA",
+   "auditorium": "IMAX VOLVO",
+   "booking": "https://tickets.cinemacity.cz/order/241543",
+   "attrs": [
+    "15-plus",
+    "2d",
+    "70-mm",
+    "drama",
+    "first-subbed-lang-cs",
+    "history",
+    "original-lang-en",
+    "subbed"
+   ],
+   "hall_size": 385,
+   "free_regular": 305,
+   "free_accessible": 6,
+   "per_row": {
+    "1": 23,
+    "2": 23,
+    "3": 29,
+    "4": 32,
+    "5": 32,
+    "6": 28,
+    "7": 27,
+    "8": 27,
+    "9": 27,
+    "10": 25,
+    "11": 21,
+    "12": 11
+   },
+   "max_row": 12,
+   "good_seats": 198,
+   "best_block": 32,
+   "detail": "řada 5: 1–32 (32 vedle sebe) · řada 6: 1–15 (15 vedle sebe), 20–32 (13 vedle sebe) · řada 7: 22–35 (14 vedle sebe), 1–13 (13 vedle sebe) · řada 8: 25–38 (14 vedle sebe), 1–12 (12 vedle sebe), 23 · řada 9: 25–38 (14 vedle sebe), 1–13 (13 vedle sebe) · řada 10: 25–38 (14 vedle sebe), 1–11 (11 vedle sebe) · řada 11: 1–14 (14 vedle sebe), 33–38 (6 vedle sebe), 22 · řada 12: 17–21 (5 vedle sebe), 1–3 (3 vedle sebe), 13–14, 11",
+   "late": false,
+   "match": false
+  },
+  {
+   "datetime": "2026-09-10T09:00:00",
+   "date": "2026-09-10",
+   "time": "09:00",
+   "weekday": 3,
+   "cinema": "Praha Flora, OC FLORA",
+   "auditorium": "IMAX VOLVO",
+   "booking": "https://tickets.cinemacity.cz/order/241547",
+   "attrs": [
+    "15-plus",
+    "2d",
+    "70-mm",
+    "drama",
+    "first-subbed-lang-cs",
+    "history",
+    "original-lang-en",
+    "subbed"
+   ],
+   "hall_size": 385,
+   "free_regular": 280,
+   "free_accessible": 6,
+   "per_row": {
+    "1": 23,
+    "2": 23,
+    "3": 29,
+    "4": 31,
+    "5": 29,
+    "6": 24,
+    "7": 20,
+    "8": 23,
+    "9": 20,
+    "10": 22,
+    "11": 24,
+    "12": 12
+   },
+   "max_row": 12,
+   "good_seats": 174,
+   "best_block": 16,
+   "detail": "řada 5: 1–16 (16 vedle sebe), 20–32 (13 vedle sebe) · řada 6: 20–32 (13 vedle sebe), 1–9 (9 vedle sebe), 12–13 · řada 7: 1–11 (11 vedle sebe), 27–35 (9 vedle sebe) · řada 8: 1–9 (9 vedle sebe), 32–38 (7 vedle sebe), 20–23 (4 vedle sebe), 11–13 (3 vedle sebe) · řada 9: 1–12 (12 vedle sebe), 31–38 (8 vedle sebe) · řada 10: 28–38 (11 vedle sebe), 1–10 (10 vedle sebe), 17 · řada 11: 1–13 (13 vedle sebe), 29–38 (10 vedle sebe), 23 · řada 12: 15–21 (7 vedle sebe), 1–4 (4 vedle sebe), 7",
+   "late": false,
    "match": false
   }
  ]
