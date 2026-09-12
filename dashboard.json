@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-12T21:36:07",
+ "generated": "2026-09-13T00:29:35",
  "criteria": {
   "min_row": 5,
   "min_seats": 3,
@@ -31,17 +31,17 @@
    "free_accessible": 6,
    "per_row": {
     "1": 23,
-    "2": 16,
+    "2": 14,
     "3": 9,
     "4": 0,
     "5": 0,
     "6": 0,
-    "7": 1
+    "7": 3
    },
    "max_row": 12,
-   "good_seats": 1,
-   "best_block": 1,
-   "detail": "řada 7: 35",
+   "good_seats": 3,
+   "best_block": 2,
+   "detail": "řada 7: 18–19, 35",
    "late": false,
    "match": false
   },
@@ -64,11 +64,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 20,
+   "free_regular": 19,
    "free_accessible": 6,
    "per_row": {
-    "1": 9,
-    "2": 9,
+    "1": 10,
+    "2": 7,
     "3": 2
    },
    "max_row": 12,
@@ -130,13 +130,13 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 33,
+   "free_regular": 32,
    "free_accessible": 5,
    "per_row": {
     "1": 21,
     "2": 8,
     "3": 1,
-    "4": 3
+    "4": 2
    },
    "max_row": 12,
    "good_seats": 0,
@@ -164,7 +164,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 153,
+   "free_regular": 152,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
@@ -172,7 +172,7 @@
     "3": 29,
     "4": 14,
     "5": 11,
-    "6": 11,
+    "6": 10,
     "7": 10,
     "8": 9,
     "9": 9,
@@ -180,9 +180,9 @@
     "11": 6
    },
    "max_row": 12,
-   "good_seats": 64,
+   "good_seats": 63,
    "best_block": 6,
-   "detail": "řada 5: 1–6 (6 vedle sebe), 28–32 (5 vedle sebe) · řada 6: 27–32 (6 vedle sebe), 1–5 (5 vedle sebe) · řada 7: 1–5 (5 vedle sebe), 32–35 (4 vedle sebe), 30 · řada 8: 1–5 (5 vedle sebe), 35–38 (4 vedle sebe) · řada 9: 1–5 (5 vedle sebe), 35–38 (4 vedle sebe) · řada 10: 34–38 (5 vedle sebe), 1–3 (3 vedle sebe) · řada 11: 34–38 (5 vedle sebe), 3",
+   "detail": "řada 5: 1–6 (6 vedle sebe), 28–32 (5 vedle sebe) · řada 6: 28–32 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 7: 1–5 (5 vedle sebe), 32–35 (4 vedle sebe), 30 · řada 8: 1–5 (5 vedle sebe), 35–38 (4 vedle sebe) · řada 9: 1–5 (5 vedle sebe), 35–38 (4 vedle sebe) · řada 10: 34–38 (5 vedle sebe), 1–3 (3 vedle sebe) · řada 11: 34–38 (5 vedle sebe), 3",
    "late": false,
    "match": false
   },
@@ -246,7 +246,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 61,
+   "free_regular": 63,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
@@ -255,15 +255,15 @@
     "4": 7,
     "5": 2,
     "6": 0,
-    "7": 1,
+    "7": 3,
     "8": 0,
     "9": 1,
     "10": 1
    },
    "max_row": 12,
-   "good_seats": 5,
-   "best_block": 1,
-   "detail": "řada 5: 32, 3 · řada 7: 1 · řada 9: 1 · řada 10: 38",
+   "good_seats": 7,
+   "best_block": 3,
+   "detail": "řada 5: 32, 3 · řada 7: 1–3 (3 vedle sebe) · řada 9: 1 · řada 10: 38",
    "late": true,
    "match": true
   },
@@ -286,21 +286,22 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 56,
+   "free_regular": 62,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 17,
     "3": 13,
     "4": 2,
-    "5": 1
+    "5": 1,
+    "6": 6
    },
    "max_row": 12,
-   "good_seats": 1,
-   "best_block": 1,
-   "detail": "řada 5: 1",
+   "good_seats": 7,
+   "best_block": 3,
+   "detail": "řada 5: 1 · řada 6: 18–20 (3 vedle sebe), 12–13, 15",
    "late": true,
-   "match": false
+   "match": true
   },
   {
    "datetime": "2026-09-15T09:00:00",
@@ -321,12 +322,12 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 180,
+   "free_regular": 179,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
-    "3": 28,
+    "3": 27,
     "4": 20,
     "5": 15,
     "6": 11,
@@ -362,14 +363,14 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 133,
+   "free_regular": 132,
    "free_accessible": 6,
    "per_row": {
     "1": 19,
     "2": 23,
     "3": 25,
     "4": 17,
-    "5": 11,
+    "5": 10,
     "6": 6,
     "7": 7,
     "8": 5,
@@ -378,9 +379,9 @@
     "11": 6
    },
    "max_row": 12,
-   "good_seats": 49,
+   "good_seats": 48,
    "best_block": 5,
-   "detail": "řada 5: 28–32 (5 vedle sebe), 1–5 (5 vedle sebe), 15 · řada 6: 30–32 (3 vedle sebe), 1–3 (3 vedle sebe) · řada 7: 32–35 (4 vedle sebe), 1–3 (3 vedle sebe) · řada 8: 1–5 (5 vedle sebe) · řada 9: 35–38 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 10: 1–4 (4 vedle sebe), 37–38 · řada 11: 36–38 (3 vedle sebe), 1–3 (3 vedle sebe)",
+   "detail": "řada 5: 28–32 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 6: 30–32 (3 vedle sebe), 1–3 (3 vedle sebe) · řada 7: 32–35 (4 vedle sebe), 1–3 (3 vedle sebe) · řada 8: 1–5 (5 vedle sebe) · řada 9: 35–38 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 10: 1–4 (4 vedle sebe), 37–38 · řada 11: 36–38 (3 vedle sebe), 1–3 (3 vedle sebe)",
    "late": false,
    "match": false
   },
@@ -403,7 +404,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 71,
+   "free_regular": 69,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
@@ -411,12 +412,12 @@
     "3": 13,
     "4": 9,
     "5": 1,
-    "6": 4
+    "6": 2
    },
    "max_row": 12,
-   "good_seats": 5,
+   "good_seats": 3,
    "best_block": 2,
-   "detail": "řada 5: 32 · řada 6: 31–32, 1–2",
+   "detail": "řada 5: 32 · řada 6: 31–32",
    "late": true,
    "match": true
   },
@@ -439,13 +440,13 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 58,
+   "free_regular": 60,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 21,
     "3": 10,
-    "4": 1,
+    "4": 3,
     "5": 1,
     "6": 1,
     "7": 1
@@ -517,14 +518,14 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 155,
+   "free_regular": 153,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
     "3": 23,
     "4": 19,
-    "5": 16,
+    "5": 14,
     "6": 8,
     "7": 8,
     "8": 8,
@@ -533,9 +534,9 @@
     "11": 7
    },
    "max_row": 12,
-   "good_seats": 67,
-   "best_block": 9,
-   "detail": "řada 5: 1–9 (9 vedle sebe), 26–32 (7 vedle sebe) · řada 6: 29–32 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 7: 31–35 (5 vedle sebe), 1–3 (3 vedle sebe) · řada 8: 34–38 (5 vedle sebe), 1–3 (3 vedle sebe) · řada 9: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 10: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 11: 1–4 (4 vedle sebe), 36–38 (3 vedle sebe)",
+   "good_seats": 65,
+   "best_block": 7,
+   "detail": "řada 5: 26–32 (7 vedle sebe), 1–7 (7 vedle sebe) · řada 6: 29–32 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 7: 31–35 (5 vedle sebe), 1–3 (3 vedle sebe) · řada 8: 34–38 (5 vedle sebe), 1–3 (3 vedle sebe) · řada 9: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 10: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 11: 1–4 (4 vedle sebe), 36–38 (3 vedle sebe)",
    "late": false,
    "match": false
   },
@@ -558,13 +559,13 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 50,
+   "free_regular": 47,
    "free_accessible": 5,
    "per_row": {
     "1": 21,
     "2": 15,
     "3": 9,
-    "4": 4,
+    "4": 1,
     "5": 1
    },
    "max_row": 12,
@@ -630,7 +631,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 179,
+   "free_regular": 177,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
@@ -641,14 +642,14 @@
     "6": 14,
     "7": 9,
     "8": 12,
-    "9": 12,
+    "9": 10,
     "10": 9,
     "11": 10
    },
    "max_row": 12,
-   "good_seats": 83,
+   "good_seats": 81,
    "best_block": 9,
-   "detail": "řada 5: 1–9 (9 vedle sebe), 25–32 (8 vedle sebe) · řada 6: 26–32 (7 vedle sebe), 1–7 (7 vedle sebe) · řada 7: 31–35 (5 vedle sebe), 1–4 (4 vedle sebe) · řada 8: 33–38 (6 vedle sebe), 1–6 (6 vedle sebe) · řada 9: 33–38 (6 vedle sebe), 1–4 (4 vedle sebe), 29, 9 · řada 10: 33–38 (6 vedle sebe), 5–6, 1 · řada 11: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe)",
+   "detail": "řada 5: 1–9 (9 vedle sebe), 25–32 (8 vedle sebe) · řada 6: 26–32 (7 vedle sebe), 1–7 (7 vedle sebe) · řada 7: 31–35 (5 vedle sebe), 1–4 (4 vedle sebe) · řada 8: 33–38 (6 vedle sebe), 1–6 (6 vedle sebe) · řada 9: 33–38 (6 vedle sebe), 1–4 (4 vedle sebe) · řada 10: 33–38 (6 vedle sebe), 5–6, 1 · řada 11: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe)",
    "late": false,
    "match": false
   },
@@ -671,7 +672,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 156,
+   "free_regular": 154,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
@@ -682,14 +683,14 @@
     "6": 11,
     "7": 10,
     "8": 8,
-    "9": 10,
+    "9": 8,
     "10": 8,
     "11": 8
    },
    "max_row": 12,
-   "good_seats": 67,
+   "good_seats": 65,
    "best_block": 6,
-   "detail": "řada 5: 27–32 (6 vedle sebe), 1–6 (6 vedle sebe) · řada 6: 1–6 (6 vedle sebe), 28–32 (5 vedle sebe) · řada 7: 31–35 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 8: 1–5 (5 vedle sebe), 36–38 (3 vedle sebe) · řada 9: 1–6 (6 vedle sebe), 35–38 (4 vedle sebe) · řada 10: 35–38 (4 vedle sebe), 1–3 (3 vedle sebe), 33 · řada 11: 35–38 (4 vedle sebe), 1–4 (4 vedle sebe)",
+   "detail": "řada 5: 27–32 (6 vedle sebe), 1–6 (6 vedle sebe) · řada 6: 1–6 (6 vedle sebe), 28–32 (5 vedle sebe) · řada 7: 31–35 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 8: 1–5 (5 vedle sebe), 36–38 (3 vedle sebe) · řada 9: 35–38 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 10: 35–38 (4 vedle sebe), 1–3 (3 vedle sebe), 33 · řada 11: 35–38 (4 vedle sebe), 1–4 (4 vedle sebe)",
    "late": false,
    "match": false
   },
@@ -822,12 +823,12 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 123,
+   "free_regular": 122,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
-    "3": 25,
+    "3": 24,
     "4": 17,
     "5": 10,
     "6": 8,
@@ -862,12 +863,12 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 53,
+   "free_regular": 48,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
-    "2": 21,
-    "3": 5,
+    "2": 17,
+    "3": 4,
     "4": 3,
     "5": 1
    },
@@ -897,13 +898,13 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 31,
+   "free_regular": 29,
    "free_accessible": 6,
    "per_row": {
     "1": 21,
     "2": 4,
     "3": 3,
-    "4": 3
+    "4": 1
    },
    "max_row": 12,
    "good_seats": 0,
@@ -931,7 +932,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 181,
+   "free_regular": 178,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
@@ -939,7 +940,7 @@
     "3": 27,
     "4": 21,
     "5": 17,
-    "6": 12,
+    "6": 9,
     "7": 13,
     "8": 11,
     "9": 11,
@@ -947,9 +948,9 @@
     "11": 11
    },
    "max_row": 12,
-   "good_seats": 87,
+   "good_seats": 84,
    "best_block": 9,
-   "detail": "řada 5: 1–9 (9 vedle sebe), 26–32 (7 vedle sebe), 11 · řada 6: 26–32 (7 vedle sebe), 1–5 (5 vedle sebe) · řada 7: 1–7 (7 vedle sebe), 30–35 (6 vedle sebe) · řada 8: 1–6 (6 vedle sebe), 34–38 (5 vedle sebe) · řada 9: 1–6 (6 vedle sebe), 34–38 (5 vedle sebe) · řada 10: 1–7 (7 vedle sebe), 34–38 (5 vedle sebe) · řada 11: 1–6 (6 vedle sebe), 34–38 (5 vedle sebe)",
+   "detail": "řada 5: 1–9 (9 vedle sebe), 26–32 (7 vedle sebe), 11 · řada 6: 1–5 (5 vedle sebe), 29–32 (4 vedle sebe) · řada 7: 1–7 (7 vedle sebe), 30–35 (6 vedle sebe) · řada 8: 1–6 (6 vedle sebe), 34–38 (5 vedle sebe) · řada 9: 1–6 (6 vedle sebe), 34–38 (5 vedle sebe) · řada 10: 1–7 (7 vedle sebe), 34–38 (5 vedle sebe) · řada 11: 1–6 (6 vedle sebe), 34–38 (5 vedle sebe)",
    "late": false,
    "match": false
   },
@@ -972,25 +973,25 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 143,
+   "free_regular": 142,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
     "3": 26,
-    "4": 19,
+    "4": 17,
     "5": 10,
-    "6": 8,
+    "6": 9,
     "7": 8,
-    "8": 7,
-    "9": 8,
+    "8": 9,
+    "9": 6,
     "10": 6,
     "11": 5
    },
    "max_row": 12,
-   "good_seats": 52,
+   "good_seats": 53,
    "best_block": 6,
-   "detail": "řada 5: 27–32 (6 vedle sebe), 1–4 (4 vedle sebe) · řada 6: 29–32 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 7: 1–5 (5 vedle sebe), 33–35 (3 vedle sebe) · řada 8: 1–4 (4 vedle sebe), 36–38 (3 vedle sebe) · řada 9: 1–4 (4 vedle sebe), 36–38 (3 vedle sebe), 7 · řada 10: 1–4 (4 vedle sebe), 37–38 · řada 11: 1–4 (4 vedle sebe), 7",
+   "detail": "řada 5: 27–32 (6 vedle sebe), 1–4 (4 vedle sebe) · řada 6: 1–5 (5 vedle sebe), 29–32 (4 vedle sebe) · řada 7: 1–5 (5 vedle sebe), 33–35 (3 vedle sebe) · řada 8: 1–6 (6 vedle sebe), 36–38 (3 vedle sebe) · řada 9: 36–38 (3 vedle sebe), 3–4, 7 · řada 10: 1–4 (4 vedle sebe), 37–38 · řada 11: 1–4 (4 vedle sebe), 7",
    "late": false,
    "match": false
   },
@@ -1013,13 +1014,13 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 101,
+   "free_regular": 100,
    "free_accessible": 5,
    "per_row": {
     "1": 23,
     "2": 23,
-    "3": 24,
-    "4": 12,
+    "3": 22,
+    "4": 13,
     "5": 5,
     "6": 2,
     "7": 2,
@@ -1054,13 +1055,13 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 119,
+   "free_regular": 115,
    "free_accessible": 6,
    "per_row": {
     "1": 22,
     "2": 23,
     "3": 25,
-    "4": 19,
+    "4": 15,
     "5": 9,
     "6": 7,
     "7": 0,
@@ -1136,7 +1137,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 167,
+   "free_regular": 164,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
@@ -1147,15 +1148,15 @@
     "6": 10,
     "7": 8,
     "8": 7,
-    "9": 10,
+    "9": 7,
     "10": 8,
     "11": 9,
     "12": 1
    },
    "max_row": 12,
-   "good_seats": 67,
+   "good_seats": 64,
    "best_block": 8,
-   "detail": "řada 5: 1–8 (8 vedle sebe), 27–32 (6 vedle sebe) · řada 6: 28–32 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 7: 32–35 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 8: 1–6 (6 vedle sebe), 36 · řada 9: 1–6 (6 vedle sebe), 35–38 (4 vedle sebe) · řada 10: 1–6 (6 vedle sebe), 37–38 · řada 11: 34–38 (5 vedle sebe), 1–4 (4 vedle sebe) · řada 12: 1",
+   "detail": "řada 5: 1–8 (8 vedle sebe), 27–32 (6 vedle sebe) · řada 6: 28–32 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 7: 32–35 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 8: 1–6 (6 vedle sebe), 36 · řada 9: 35–38 (4 vedle sebe), 1–3 (3 vedle sebe) · řada 10: 1–6 (6 vedle sebe), 37–38 · řada 11: 34–38 (5 vedle sebe), 1–4 (4 vedle sebe) · řada 12: 1",
    "late": false,
    "match": false
   },
@@ -1178,7 +1179,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 120,
+   "free_regular": 123,
    "free_accessible": 5,
    "per_row": {
     "1": 23,
@@ -1186,16 +1187,16 @@
     "3": 29,
     "4": 19,
     "5": 8,
-    "6": 8,
+    "6": 5,
     "7": 4,
-    "8": 2,
-    "9": 2,
+    "8": 5,
+    "9": 5,
     "10": 2
    },
    "max_row": 12,
-   "good_seats": 26,
+   "good_seats": 29,
    "best_block": 4,
-   "detail": "řada 5: 29–32 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 6: 29–32 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 7: 34–35, 1–2 · řada 8: 37–38 · řada 9: 38, 35 · řada 10: 36, 1",
+   "detail": "řada 5: 29–32 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 6: 29–32 (4 vedle sebe), 1 · řada 7: 34–35, 1–2 · řada 8: 1–3 (3 vedle sebe), 37–38 · řada 9: 1–3 (3 vedle sebe), 38, 35 · řada 10: 36, 1",
    "late": true,
    "match": true
   },
@@ -1218,15 +1219,15 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 171,
+   "free_regular": 167,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
     "3": 29,
-    "4": 24,
+    "4": 22,
     "5": 13,
-    "6": 10,
+    "6": 8,
     "7": 9,
     "8": 11,
     "9": 9,
@@ -1235,9 +1236,9 @@
     "12": 2
    },
    "max_row": 12,
-   "good_seats": 72,
+   "good_seats": 70,
    "best_block": 8,
-   "detail": "řada 5: 25–32 (8 vedle sebe), 1–5 (5 vedle sebe) · řada 6: 1–7 (7 vedle sebe), 30–32 (3 vedle sebe) · řada 7: 31–35 (5 vedle sebe), 1–4 (4 vedle sebe) · řada 8: 33–38 (6 vedle sebe), 1–5 (5 vedle sebe) · řada 9: 33–38 (6 vedle sebe), 1–3 (3 vedle sebe) · řada 10: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 11: 35–38 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 12: 20, 1",
+   "detail": "řada 5: 25–32 (8 vedle sebe), 1–5 (5 vedle sebe) · řada 6: 1–5 (5 vedle sebe), 30–32 (3 vedle sebe) · řada 7: 31–35 (5 vedle sebe), 1–4 (4 vedle sebe) · řada 8: 33–38 (6 vedle sebe), 1–5 (5 vedle sebe) · řada 9: 33–38 (6 vedle sebe), 1–3 (3 vedle sebe) · řada 10: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 11: 35–38 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 12: 20, 1",
    "late": true,
    "match": true
   },
@@ -1260,7 +1261,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 252,
+   "free_regular": 250,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
@@ -1271,15 +1272,15 @@
     "6": 20,
     "7": 19,
     "8": 21,
-    "9": 20,
+    "9": 18,
     "10": 19,
     "11": 19,
     "12": 2
    },
    "max_row": 12,
-   "good_seats": 145,
+   "good_seats": 143,
    "best_block": 13,
-   "detail": "řada 5: 1–13 (13 vedle sebe), 21–32 (12 vedle sebe) · řada 6: 23–32 (10 vedle sebe), 1–10 (10 vedle sebe) · řada 7: 1–10 (10 vedle sebe), 27–35 (9 vedle sebe) · řada 8: 1–11 (11 vedle sebe), 29–38 (10 vedle sebe) · řada 9: 29–38 (10 vedle sebe), 1–10 (10 vedle sebe) · řada 10: 1–10 (10 vedle sebe), 30–38 (9 vedle sebe) · řada 11: 29–38 (10 vedle sebe), 1–9 (9 vedle sebe) · řada 12: 19, 2",
+   "detail": "řada 5: 1–13 (13 vedle sebe), 21–32 (12 vedle sebe) · řada 6: 23–32 (10 vedle sebe), 1–10 (10 vedle sebe) · řada 7: 1–10 (10 vedle sebe), 27–35 (9 vedle sebe) · řada 8: 1–11 (11 vedle sebe), 29–38 (10 vedle sebe) · řada 9: 1–10 (10 vedle sebe), 31–38 (8 vedle sebe) · řada 10: 1–10 (10 vedle sebe), 30–38 (9 vedle sebe) · řada 11: 29–38 (10 vedle sebe), 1–9 (9 vedle sebe) · řada 12: 19, 2",
    "late": false,
    "match": false
   },
@@ -1302,16 +1303,16 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 177,
+   "free_regular": 179,
    "free_accessible": 6,
    "per_row": {
-    "1": 22,
-    "2": 22,
+    "1": 23,
+    "2": 23,
     "3": 27,
     "4": 22,
-    "5": 16,
+    "5": 14,
     "6": 12,
-    "7": 13,
+    "7": 15,
     "8": 14,
     "9": 12,
     "10": 10,
@@ -1319,8 +1320,8 @@
    },
    "max_row": 12,
    "good_seats": 84,
-   "best_block": 9,
-   "detail": "řada 5: 24–32 (9 vedle sebe), 1–7 (7 vedle sebe) · řada 6: 27–32 (6 vedle sebe), 1–6 (6 vedle sebe) · řada 7: 28–35 (8 vedle sebe), 1–5 (5 vedle sebe) · řada 8: 1–8 (8 vedle sebe), 33–38 (6 vedle sebe) · řada 9: 33–38 (6 vedle sebe), 1–6 (6 vedle sebe) · řada 10: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 11: 35–38 (4 vedle sebe), 1–3 (3 vedle sebe)",
+   "best_block": 8,
+   "detail": "řada 5: 26–32 (7 vedle sebe), 1–7 (7 vedle sebe) · řada 6: 27–32 (6 vedle sebe), 1–6 (6 vedle sebe) · řada 7: 28–35 (8 vedle sebe), 1–7 (7 vedle sebe) · řada 8: 1–8 (8 vedle sebe), 33–38 (6 vedle sebe) · řada 9: 33–38 (6 vedle sebe), 1–6 (6 vedle sebe) · řada 10: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 11: 35–38 (4 vedle sebe), 1–3 (3 vedle sebe)",
    "late": true,
    "match": true
   },
@@ -1384,13 +1385,13 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 237,
+   "free_regular": 239,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
     "3": 29,
-    "4": 29,
+    "4": 31,
     "5": 23,
     "6": 19,
     "7": 18,
@@ -1466,12 +1467,12 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 154,
+   "free_regular": 152,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
-    "3": 29,
+    "3": 27,
     "4": 21,
     "5": 11,
     "6": 9,
@@ -1550,7 +1551,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 171,
+   "free_regular": 170,
    "free_accessible": 5,
    "per_row": {
     "1": 23,
@@ -1561,14 +1562,14 @@
     "6": 10,
     "7": 14,
     "8": 9,
-    "9": 9,
+    "9": 8,
     "10": 10,
     "11": 9
    },
    "max_row": 12,
-   "good_seats": 78,
+   "good_seats": 77,
    "best_block": 9,
-   "detail": "řada 5: 24–32 (9 vedle sebe), 1–8 (8 vedle sebe) · řada 6: 28–32 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 7: 29–35 (7 vedle sebe), 1–7 (7 vedle sebe) · řada 8: 33–38 (6 vedle sebe), 4–6 (3 vedle sebe) · řada 9: 34–38 (5 vedle sebe), 1–4 (4 vedle sebe) · řada 10: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 11: 35–38 (4 vedle sebe), 1–4 (4 vedle sebe), 30",
+   "detail": "řada 5: 24–32 (9 vedle sebe), 1–8 (8 vedle sebe) · řada 6: 28–32 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 7: 29–35 (7 vedle sebe), 1–7 (7 vedle sebe) · řada 8: 33–38 (6 vedle sebe), 4–6 (3 vedle sebe) · řada 9: 35–38 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 10: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 11: 35–38 (4 vedle sebe), 1–4 (4 vedle sebe), 30",
    "late": true,
    "match": true
   },
@@ -1591,7 +1592,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 148,
+   "free_regular": 147,
    "free_accessible": 5,
    "per_row": {
     "1": 23,
@@ -1604,13 +1605,12 @@
     "8": 11,
     "9": 8,
     "10": 2,
-    "11": 6,
-    "12": 1
+    "11": 6
    },
    "max_row": 12,
-   "good_seats": 59,
+   "good_seats": 58,
    "best_block": 7,
-   "detail": "řada 5: 1–7 (7 vedle sebe), 27–32 (6 vedle sebe) · řada 6: 1–5 (5 vedle sebe), 32, 29 · řada 7: 30–35 (6 vedle sebe), 1–5 (5 vedle sebe) · řada 8: 1–6 (6 vedle sebe), 34–38 (5 vedle sebe) · řada 9: 35–38 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 10: 38, 1 · řada 11: 35–38 (4 vedle sebe), 3–4 · řada 12: 15",
+   "detail": "řada 5: 1–7 (7 vedle sebe), 27–32 (6 vedle sebe) · řada 6: 1–5 (5 vedle sebe), 32, 29 · řada 7: 30–35 (6 vedle sebe), 1–5 (5 vedle sebe) · řada 8: 1–6 (6 vedle sebe), 34–38 (5 vedle sebe) · řada 9: 35–38 (4 vedle sebe), 1–4 (4 vedle sebe) · řada 10: 38, 1 · řada 11: 35–38 (4 vedle sebe), 3–4",
    "late": true,
    "match": true
   },
@@ -1716,7 +1716,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 154,
+   "free_regular": 155,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
@@ -1728,13 +1728,13 @@
     "7": 10,
     "8": 10,
     "9": 10,
-    "10": 10,
+    "10": 11,
     "11": 5
    },
    "max_row": 12,
-   "good_seats": 69,
+   "good_seats": 70,
    "best_block": 8,
-   "detail": "řada 5: 1–8 (8 vedle sebe), 26–32 (7 vedle sebe) · řada 6: 1–5 (5 vedle sebe), 29–32 (4 vedle sebe) · řada 7: 31–35 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 8: 33–38 (6 vedle sebe), 1–4 (4 vedle sebe) · řada 9: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 10: 34–38 (5 vedle sebe), 4–6 (3 vedle sebe), 1–2 · řada 11: 1–3 (3 vedle sebe), 37–38",
+   "detail": "řada 5: 1–8 (8 vedle sebe), 26–32 (7 vedle sebe) · řada 6: 1–5 (5 vedle sebe), 29–32 (4 vedle sebe) · řada 7: 31–35 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 8: 33–38 (6 vedle sebe), 1–4 (4 vedle sebe) · řada 9: 34–38 (5 vedle sebe), 1–5 (5 vedle sebe) · řada 10: 1–6 (6 vedle sebe), 34–38 (5 vedle sebe) · řada 11: 1–3 (3 vedle sebe), 37–38",
    "late": true,
    "match": true
   },
@@ -1757,26 +1757,26 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 206,
+   "free_regular": 202,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
     "3": 29,
     "4": 26,
-    "5": 20,
+    "5": 18,
     "6": 13,
     "7": 12,
-    "8": 17,
+    "8": 15,
     "9": 10,
     "10": 15,
     "11": 16,
     "12": 2
    },
    "max_row": 12,
-   "good_seats": 105,
-   "best_block": 11,
-   "detail": "řada 5: 22–32 (11 vedle sebe), 1–9 (9 vedle sebe) · řada 6: 1–7 (7 vedle sebe), 27–32 (6 vedle sebe) · řada 7: 30–35 (6 vedle sebe), 1–5 (5 vedle sebe), 7 · řada 8: 1–9 (9 vedle sebe), 31–38 (8 vedle sebe) · řada 9: 32–38 (7 vedle sebe), 1–3 (3 vedle sebe) · řada 10: 31–38 (8 vedle sebe), 1–7 (7 vedle sebe) · řada 11: 31–38 (8 vedle sebe), 1–8 (8 vedle sebe) · řada 12: 21, 1",
+   "good_seats": 101,
+   "best_block": 9,
+   "detail": "řada 5: 24–32 (9 vedle sebe), 1–9 (9 vedle sebe) · řada 6: 1–7 (7 vedle sebe), 27–32 (6 vedle sebe) · řada 7: 30–35 (6 vedle sebe), 1–5 (5 vedle sebe), 7 · řada 8: 31–38 (8 vedle sebe), 1–7 (7 vedle sebe) · řada 9: 32–38 (7 vedle sebe), 1–3 (3 vedle sebe) · řada 10: 31–38 (8 vedle sebe), 1–7 (7 vedle sebe) · řada 11: 31–38 (8 vedle sebe), 1–8 (8 vedle sebe) · řada 12: 21, 1",
    "late": false,
    "match": false
   },
@@ -1840,12 +1840,12 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 113,
+   "free_regular": 115,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
-    "3": 21,
+    "3": 23,
     "4": 13,
     "5": 3,
     "6": 5,
