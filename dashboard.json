@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-12T01:30:28",
+ "generated": "2026-09-12T03:26:24",
  "criteria": {
   "min_row": 5,
   "min_seats": 3,
@@ -141,11 +141,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 32,
+   "free_regular": 33,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
-    "2": 6,
+    "2": 7,
     "3": 1,
     "4": 0,
     "5": 0,
@@ -258,11 +258,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 38,
+   "free_regular": 35,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
-    "2": 13,
+    "2": 10,
     "3": 2
    },
    "max_row": 12,
@@ -483,13 +483,13 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 186,
+   "free_regular": 185,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
     "3": 28,
-    "4": 21,
+    "4": 20,
     "5": 17,
     "6": 12,
     "7": 10,
@@ -720,11 +720,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 56,
+   "free_regular": 54,
    "free_accessible": 5,
    "per_row": {
     "1": 21,
-    "2": 20,
+    "2": 18,
     "3": 9,
     "4": 4,
     "5": 1,
