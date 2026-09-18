@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-17T23:39:08",
+ "generated": "2026-09-18T02:43:40",
  "criteria": {
   "min_row": 5,
   "min_seats": 3,
@@ -106,11 +106,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 41,
+   "free_regular": 43,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
-    "2": 12,
+    "2": 14,
     "3": 5,
     "4": 1
    },
@@ -140,17 +140,23 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 17,
+   "free_regular": 20,
    "free_accessible": 6,
    "per_row": {
-    "1": 17
+    "1": 17,
+    "2": 0,
+    "3": 0,
+    "4": 0,
+    "5": 0,
+    "6": 1,
+    "7": 2
    },
    "max_row": 12,
-   "good_seats": 0,
-   "best_block": 0,
-   "detail": "",
+   "good_seats": 3,
+   "best_block": 2,
+   "detail": "řada 6: 13 · řada 7: 15–16",
    "late": true,
-   "match": false
+   "match": true
   },
   {
    "datetime": "2026-09-19T09:00:00",
@@ -171,11 +177,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 114,
+   "free_regular": 115,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
-    "2": 22,
+    "2": 23,
     "3": 17,
     "4": 11,
     "5": 9,
@@ -212,11 +218,11 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 64,
+   "free_regular": 65,
    "free_accessible": 6,
    "per_row": {
     "1": 21,
-    "2": 18,
+    "2": 19,
     "3": 14,
     "4": 8,
     "5": 1,
@@ -287,13 +293,13 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 52,
+   "free_regular": 50,
    "free_accessible": 6,
    "per_row": {
     "1": 22,
     "2": 15,
     "3": 10,
-    "4": 5
+    "4": 3
    },
    "max_row": 12,
    "good_seats": 0,
@@ -321,12 +327,12 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 107,
+   "free_regular": 111,
    "free_accessible": 5,
    "per_row": {
     "1": 23,
     "2": 23,
-    "3": 16,
+    "3": 20,
     "4": 11,
     "5": 10,
     "6": 5,
@@ -400,12 +406,12 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 76,
+   "free_regular": 77,
    "free_accessible": 5,
    "per_row": {
     "1": 23,
     "2": 21,
-    "3": 13,
+    "3": 14,
     "4": 9,
     "5": 6,
     "6": 1,
@@ -440,13 +446,13 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 96,
+   "free_regular": 99,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
-    "3": 17,
-    "4": 11,
+    "3": 18,
+    "4": 13,
     "5": 9,
     "6": 5,
     "7": 3,
@@ -481,7 +487,7 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 194,
+   "free_regular": 192,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
@@ -489,7 +495,7 @@
     "3": 29,
     "4": 25,
     "5": 17,
-    "6": 14,
+    "6": 12,
     "7": 12,
     "8": 16,
     "9": 14,
@@ -497,9 +503,9 @@
     "11": 9
    },
    "max_row": 12,
-   "good_seats": 94,
+   "good_seats": 92,
    "best_block": 10,
-   "detail": "řada 5: 1–10 (10 vedle sebe), 26–32 (7 vedle sebe) · řada 6: 1–8 (8 vedle sebe), 27–32 (6 vedle sebe) · řada 7: 29–35 (7 vedle sebe), 1–5 (5 vedle sebe) · řada 8: 31–38 (8 vedle sebe), 1–8 (8 vedle sebe) · řada 9: 32–38 (7 vedle sebe), 1–7 (7 vedle sebe) · řada 10: 33–38 (6 vedle sebe), 1–6 (6 vedle sebe) · řada 11: 1–5 (5 vedle sebe), 35–38 (4 vedle sebe)",
+   "detail": "řada 5: 1–10 (10 vedle sebe), 26–32 (7 vedle sebe) · řada 6: 27–32 (6 vedle sebe), 1–5 (5 vedle sebe), 8 · řada 7: 29–35 (7 vedle sebe), 1–5 (5 vedle sebe) · řada 8: 31–38 (8 vedle sebe), 1–8 (8 vedle sebe) · řada 9: 32–38 (7 vedle sebe), 1–7 (7 vedle sebe) · řada 10: 33–38 (6 vedle sebe), 1–6 (6 vedle sebe) · řada 11: 1–5 (5 vedle sebe), 35–38 (4 vedle sebe)",
    "late": false,
    "match": false
   },
@@ -522,12 +528,12 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 129,
+   "free_regular": 125,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 23,
-    "3": 22,
+    "3": 18,
     "4": 17,
     "5": 10,
     "6": 8,
@@ -1049,12 +1055,12 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 59,
+   "free_regular": 60,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 15,
-    "3": 12,
+    "3": 13,
     "4": 3,
     "5": 1,
     "6": 1,
