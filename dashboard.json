@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-29T22:59:18",
+ "generated": "2026-09-30T02:43:06",
  "criteria": {
   "min_row": 5,
   "min_seats": 3,
@@ -27,14 +27,14 @@
     "subbed"
    ],
    "hall_size": 385,
-   "free_regular": 70,
+   "free_regular": 68,
    "free_accessible": 6,
    "per_row": {
     "1": 23,
     "2": 19,
     "3": 10,
     "4": 7,
-    "5": 5,
+    "5": 3,
     "6": 2,
     "7": 2,
     "8": 0,
@@ -42,9 +42,9 @@
     "10": 1
    },
    "max_row": 12,
-   "good_seats": 11,
-   "best_block": 3,
-   "detail": "řada 5: 30–32 (3 vedle sebe), 1–2 · řada 6: 1–2 · řada 7: 1–2 · řada 9: 38 · řada 10: 38",
+   "good_seats": 9,
+   "best_block": 2,
+   "detail": "řada 5: 1–2, 32 · řada 6: 1–2 · řada 7: 1–2 · řada 9: 38 · řada 10: 38",
    "late": false,
    "match": false
   }
